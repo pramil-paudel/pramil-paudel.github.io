@@ -62,12 +62,7 @@
         position: relative;
     }
 
-    .sidebar ul li a:hover {
-        background: rgba(255, 255, 255, 0.4);
-        transform: translateX(5px);
-    }
-
-    .sidebar ul li a.active {
+    .sidebar ul li a:hover, .sidebar ul li a.active {
         background: rgba(255, 255, 255, 0.6);
         transform: translateX(0);
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
@@ -87,6 +82,9 @@
         box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
         position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .content::before {
@@ -96,7 +94,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-<!--        background: url('images/mountain.jpeg');-->
         opacity: 0.1;
         z-index: -1;
         background-repeat: no-repeat;
@@ -106,25 +103,39 @@
 
     .content h1 {
         color: #005f8a;
-        font-size: 2.5em;
-        margin-bottom: 30px;
+        font-size: 3em;
+        margin-bottom: 10px;
         text-align: center;
-        border-bottom: 3px dashed #0077b6;
-        padding-bottom: 10px;
+    }
+
+    .content h1::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #0077b6, #005f8a);
+        margin: 10px auto 20px;
+        border-radius: 2px;
+    }
+
+    .tagline {
+        text-align: center;
+        color: #0077b6;
+        font-size: 1.2em;
+        margin-bottom: 30px;
     }
 
     .section {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .section h2 {
         color: #005f8a;
-        border-bottom: 3px dashed #0077b6;
         padding-bottom: 10px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .section h2 i {
@@ -134,32 +145,65 @@
 
     .card {
         background: #f9f9f9;
-        padding: 30px;
+        padding: 40px;
         margin-bottom: 30px;
         border-radius: 10px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-        transform: scale(1.02);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        font-family: 'Courier New', monospace;
     }
 
     .card h3 {
         margin-top: 0;
         color: #0077b6;
-        font-size: 1.5em;
-        position: relative;
+        font-size: 1.8em;
     }
 
-    .card h3::after {
-        content: '';
-        width: 50px;
-        height: 3px;
-        background: #0077b6;
-        display: block;
-        margin: 10px 0;
+    .ribbon {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: linear-gradient(180deg, #0077b6, #005f8a);
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 8px 0 0 8px;
+        cursor: pointer;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
+    .ribbon:hover {
+        background: linear-gradient(180deg, #005f8a, #003f5a);
+    }
+
+    .floating-download {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(180deg, #0077b6, #005f8a);
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .floating-download:hover {
+        background: linear-gradient(180deg, #005f8a, #003f5a);
+        transform: scale(1.1);
     }
 
     footer {
@@ -167,21 +211,21 @@
         padding: 25px;
         background: #e3f2fd;
         color: #005f8a;
-        margin-top: 50px;
         border-top: 2px solid #0077b6;
+        margin-top: auto;
     }
 
     .skills-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px;
     }
 
     .skills-list li {
         list-style: none;
         background: #0077b6;
         color: white;
-        padding: 12px 18px;
+        padding: 15px 20px;
         border-radius: 8px;
         font-weight: bold;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -192,8 +236,63 @@
         transform: scale(1.1);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .social-links a {
+        color: #005f8a;
+        font-size: 2.5em;
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-links a:hover {
+        color: #0077b6;
+        transform: scale(1.2);
+    }
+
+    .social-links i {
+        display: block;
+    }
+
+    /* Highlight Sidebar on Scroll */
+    .sidebar ul li a.active {
+        background: rgba(255, 255, 255, 0.6);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.sidebar ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
 
 </head>
 <body>
@@ -210,10 +309,19 @@
         <li><a href="#outreach"><i class="fas fa-hands-helping"></i>Outreach</a></li>
         <li><a href="#resume"><i class="fas fa-file"></i>Resume</a></li>
     </ul>
+
 </div>
 
 <div class="content">
-    <h1>Welcome to My Resume</h1>
+    <h1>Exploring the Path of Progress</h1>
+    <p class="tagline">Dedicated to crafting innovative solutions in AI and software development</p>
+
+    <div class="social-links">
+        <a href="https://www.facebook.com/patharyodash" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/Patthar_pramil" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/pramilp/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ppaudel35@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
 
     <div id="about" class="section">
         <h2><i class="fas fa-user"></i>About Me</h2>
@@ -357,20 +465,10 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="ribbon" onclick="window.location.href='mailto:ppaudel35@gmail.com';">
+    Contact Me
+</div>
+<a href="Pramil_Paudel_Resume.pdf" download class="floating-download">CV</a>
 <footer>
     <p>&copy; 2024 Pramil Paudel. All rights reserved.</p>
 </footer>
