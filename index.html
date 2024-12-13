@@ -74,9 +74,9 @@
     }
 
     /* Content Styling */
-    .content {
+        .content {
         margin-left: 320px;
-        padding: 50px;
+        padding: 20px;
         flex-grow: 1;
         background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(232, 240, 254, 0.9));
         box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
@@ -103,7 +103,7 @@
 
     .content h1 {
         color: #005f8a;
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: 10px;
         text-align: center;
     }
@@ -145,12 +145,11 @@
 
     .card {
         background: #f9f9f9;
-        padding: 40px;
+        padding: 20px;
         margin-bottom: 30px;
         border-radius: 10px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
-        font-family: 'Courier New', monospace;
     }
 
     .card h3 {
@@ -175,6 +174,7 @@
         text-align: center;
         writing-mode: vertical-rl;
         text-orientation: mixed;
+        z-index: 3;
     }
 
     .ribbon:hover {
@@ -193,12 +193,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.2em;
+        font-size: 1.5em;
         font-weight: bold;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         text-align: center;
         text-decoration: none;
         transition: background 0.3s, transform 0.2s;
+        z-index: 3;
     }
 
     .floating-download:hover {
@@ -266,6 +267,30 @@
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
         font-weight: bold;
     }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: relative;
+            width: 100%;
+            height: auto;
+            box-shadow: none;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        .ribbon {
+            display: none;
+        }
+
+        .floating-download {
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+
 </style>
 
 <script>
@@ -307,7 +332,7 @@
         <li><a href="#publications"><i class="fas fa-book"></i>Publications</a></li>
         <li><a href="#education"><i class="fas fa-graduation-cap"></i>Education</a></li>
         <li><a href="#outreach"><i class="fas fa-hands-helping"></i>Outreach</a></li>
-        <li><a href="#resume"><i class="fas fa-file"></i>Resume</a></li>
+<!--        <li><a href="#resume"><i class="fas fa-file"></i>Resume</a></li>-->
     </ul>
 
 </div>
@@ -410,6 +435,11 @@
     <div id="publications" class="section">
         <h2><i class="fas fa-book"></i>Publications</h2>
         <div class="card">
+            <h3>Book: Basic Electronics Engineering</h3>
+            <p><strong>Heritage Publication, Bhotahity, Kathmandu</strong></p>
+            <p>Bikal Adhikari, Pramil Paudel</p>
+        </div>
+        <div class="card">
             <h3>Robust Privacy-Preserving Classification for Lensless Images</h3>
             <p><strong>IEEE MASS 2024</strong></p>
             <p>Sumit Bhattarai, Pramil Paudel, Zhu Li, Bo Luo, Fengjun Li</p>
@@ -458,10 +488,10 @@
         </div>
     </div>
 
-    <div id="resume" class="section">
-        <h2><i class="fas fa-file"></i>Resume</h2>
-        <p>You can view my full resume <a href="https://github.com/pramil-paudel/pramil-paudel.github.io/blob/gh-pages/Pramil_Paudel_Resume.pdf">here</a>.</p>
-    </div>
+<!--    <div id="resume" class="section">-->
+<!--        <h2><i class="fas fa-file"></i>Resume</h2>-->
+<!--        <p>You can view my full resume <a href="https://github.com/pramil-paudel/pramil-paudel.github.io/blob/gh-pages/Pramil_Paudel_Resume.pdf">here</a>.</p>-->
+<!--    </div>-->
 </div>
 
 
