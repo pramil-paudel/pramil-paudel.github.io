@@ -1,149 +1,379 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Pramil Paudel</title>
-<link href="HTML/styles.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="HTML/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
-<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pramil Paudel - Resume Blog</title>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' rel='stylesheet'>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background: linear-gradient(120deg, #ffffff, #e8f0fe);
+    }
 
-<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=3.3"></script>	
-<script type="text/javascript" src="HTML/js/jquery.prettyPhoto.js"></script>
-<script type="text/javascript" src="HTML/js/jquery.easing.1.3.js"></script>
+    /* Sidebar Styling */
+    .sidebar {
+        width: 300px;
+        background: linear-gradient(180deg, #0077b6, #005f8a);
+        color: white;
+        padding: 20px;
+        position: fixed;
+        height: 100vh;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 4px solid #ffffff;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        transition: background 0.3s, transform 0.2s;
+        position: relative;
+    }
+
+    .sidebar ul li a:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: translateX(5px);
+    }
+
+    .sidebar ul li a.active {
+        background: rgba(255, 255, 255, 0.6);
+        transform: translateX(0);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar ul li a i {
+        margin-right: 10px;
+        color: white;
+    }
+
+    /* Content Styling */
+    .content {
+        margin-left: 320px;
+        padding: 50px;
+        flex-grow: 1;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(232, 240, 254, 0.9));
+        box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        position: relative;
+    }
+
+    .content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+<!--        background: url('images/mountain.jpeg');-->
+        opacity: 0.1;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .content h1 {
+        color: #005f8a;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-align: center;
+        border-bottom: 3px dashed #0077b6;
+        padding-bottom: 10px;
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section h2 {
+        color: #005f8a;
+        border-bottom: 3px dashed #0077b6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 1.8em;
+    }
+
+    .section h2 i {
+        margin-right: 10px;
+        color: #005f8a;
+    }
+
+    .card {
+        background: #f9f9f9;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+        margin-top: 0;
+        color: #0077b6;
+        font-size: 1.5em;
+        position: relative;
+    }
+
+    .card h3::after {
+        content: '';
+        width: 50px;
+        height: 3px;
+        background: #0077b6;
+        display: block;
+        margin: 10px 0;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: #e3f2fd;
+        color: #005f8a;
+        margin-top: 50px;
+        border-top: 2px solid #0077b6;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .skills-list li {
+        list-style: none;
+        background: #0077b6;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .skills-list li:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
 
 </head>
-
 <body>
-<div id="header">
-	<div id="logo"><a href="#"><img src="HTML/images/logo.png"></a></div>
-	<ul id="main-menu">
-    	<li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#work">Resume</a></li>
-       <!--  <li><a href="#connect">Connect</a></li> -->
+
+<div class="sidebar">
+    <img src="images/profile.jpg" alt="Profile Picture">
+    <h2>Pramil Paudel</h2>
+    <ul>
+        <li><a href="#about"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
+        <li><a href="#skills"><i class="fas fa-code"></i>Skills</a></li>
+        <li><a href="#publications"><i class="fas fa-book"></i>Publications</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i>Education</a></li>
+        <li><a href="#outreach"><i class="fas fa-hands-helping"></i>Outreach</a></li>
+        <li><a href="#resume"><i class="fas fa-file"></i>Resume</a></li>
     </ul>
 </div>
 
-<div id="container">
+<div class="content">
+    <h1>Welcome to My Resume</h1>
 
-<!--Begin About Section-->
-    <div id="about">
-    	<h1>About</h1>
-        <ul id="top-social">
-        	<li><a href="https://www.facebook.com/patharyodash" class="facebook">Facebook</a></li>
-            <li><a href="https://twitter.com/Patthar_pramil" class="twitter">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/pramil-paudel-18609882/" class="linkedin">LinkedIn</a></li>
-        </ul>
-        <div class="top-divider"></div>
-        <div class="content">
-        	<img src="HTML/images/profile_image_one.jpg" />
-            <h2>I am Pramil Paudel, PhD student in Computer Science </h2>
-             <h3>University of Kansas, Lawrence Kansas</h3>
-            <p>Welcome to my git hub page. I am lazy as hell and believe me there is nothing in the github you can learn about me. I hate HTML and you might wonder how I call myself a software engineer who doesn't have an energy even to write about myself. People usually call me developer for logics and solutions. I worked for more than 5 years in different software companies. I worked as software developer mainly for Java based application. If you ask me what framework I know in details, I might answer you I don't know anything but I bet I can work in your organization in any role you want to give me. I can architect small to large web applications from scratch. If you hire me in your company make sure you have plenty of resources who can work in my ideas. I am person of trust and orthodox solutions. My solutions may be completely different than you expect but fasten your belt, I can rise your organization completely to new height. I love to work in Backend, devops and organizational management. </p> 
-            <P>Here is my github link : https://github.com/pramil-paudel </p>
+    <div id="about" class="section">
+        <h2><i class="fas fa-user"></i>About Me</h2>
+        <p>I am Pramil Paudel, a PhD student in Computer Science at the University of Kansas. I specialize in privacy-preserving machine learning, backend development, and devops. With over five years of experience in software engineering, I am passionate about solving complex problems with innovative solutions.</p>
+    </div>
 
-<!-- <ul id="service-icons">
-            	<li class="services-design">Design</li>
-                <li class="services-mobile">Mobile</li>
-                <li class="services-film">Film</li>
-                <li class="services-photo">Photo</li>
-            </ul> -->
+    <div id="experience" class="section">
+        <h2><i class="fas fa-briefcase"></i>Experience</h2>
+        <div class="card">
+            <h3>Ph.D. Candidate</h3>
+            <p><strong>University of Kansas</strong> | Jan 2020 - Present</p>
+            <ul class="bulleted-details">
+                <li>Spearheaded groundbreaking research in lensless image privacy-preserving machine learning solutions.</li>
+                <li>Taught courses on Python programming, object-oriented programming, and data structures.</li>
+                <li>Collaborated with the Physics Department on real-time high-energy physics exploration.</li>
+            </ul>
         </div>
-    <div class="bottom-divider"></div> 
+        <div class="card">
+            <h3>Solution Architect</h3>
+            <p><strong>Renegade Insurance, Inc.</strong> | Dec 2018 - Dec 2019</p>
+            <ul class="bulleted-details">
+                <li>Conceptualized and engineered a highly resilient Java-based insurance platform.</li>
+                <li>Implemented real-time policy generation and CI/CD workflows.</li>
+                <li>Documented strategies for data storage, quality control, and project phases.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Freelance Programmer</h3>
+            <p><strong>Upwork, Freelancer</strong> | Sept 2017 - Dec 2019</p>
+            <ul class="bulleted-details">
+                <li>Created an advertisement search engine using Elasticsearch query builders.</li>
+                <li>Developed autonomous IoT systems leveraging Java frameworks.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Lead Software Engineer</h3>
+            <p><strong>Cedargate Inc.</strong> | Dec 2014 - May 2017</p>
+            <ul class="bulleted-details">
+                <li>Designed and implemented big data solutions for US healthcare claims.</li>
+                <li>Utilized Hadoop MapReduce and Apache Spark for scalable data processing.</li>
+                <li>Enhanced cloud-based real-time processing capabilities.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Engineering Manager</h3>
+            <p><strong>National Incubation and Research Center</strong> | May 2017 - Sept 2017</p>
+            <ul class="bulleted-details">
+                <li>Led a team of 20 software engineers to establish server infrastructure for critical tools like Redmine and Jenkins.</li>
+                <li>Implemented end-to-end CI/CD automation pipelines for software projects.</li>
+                <li>Developed data processing frameworks using Apache Spark and Grails for web applications.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Instructor and Trainer</h3>
+            <p><strong>Four G, Engineering Solutions Ltd.</strong> | Sept 2017 - Dec 2019</p>
+            <ul class="bulleted-details">
+                <li>Provided training in microcontrollers, computer organization, and web application development frameworks.</li>
+                <li>Designed educational programs for Groovy on Grails, Spring Boot, and Java Servlets.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Software Developer</h3>
+            <p><strong>Yotcha Inc.</strong> | Jan 2015 - Jan 2016</p>
+            <ul class="bulleted-details">
+                <li>Developed high-performance web applications for real estate using Groovy on Grails.</li>
+                <li>Integrated cloud-based real estate data and marketing analytics into the platform.</li>
+            </ul>
+        </div>
     </div>
-<!--End About Section-->
 
-<!--Begin Experience Section-->   
-    <div id="experience">
-    	<h1>Experience</h1>
-        <div class="top-divider"></div>
-        <div class="content">
-            <div class="col">
-            <h2>Cloud Processing, Hadoop, Map Reduce</h2>
-            <h3>Deerwalk Sevices, Nepal</h3>
-            <p>I started my carrer as a Software developer in the company Deerwalk Services, Nepal. My job was to write Java (Cascading Framework) based Map Reduce job to run in cloud. I used to lead people for the project. There were separate team who used share business logic to us, looking at the files received from different vendors for USA Healthcare System. Dont ask me what I did ? I was involved not only to write a code in Java, I used to write script for mysql, redshift, python script for automation and many. If you have large data set and you want either realtime or batch processing, I can be your asset to have in your company</p>
-            </div>
-            
-            <div class="col col-mid">
-            <h2>Grails, Elasticsearch and Webapplication</h2>
-             <h3>Yotcha, Inc</h3>
-            <p>I worked in the a Software company named Yotch.Inc where I used to work as Senior Soft. Engineer. The idea of the company was creating a webapp similar to Airbnb. I would love to write I worked in this world famous online real state project unfortunately they shut it down for some business realated issue in Singapor. I was pioneer to start ES and data processing that application. I did everything a full stack developer does in a company. But, currently famours front end frameworks were not that famous at that time and I got no chance.</p>
-            </div>
-            
-            <div class="col">
-            <h2>Spring boot, Micosevices, Web Services</h2>
-             <h3>CoveredbySage LLC</h3>
-            <p>I worked as Backend Architect in a company named as Sage Nepal, Pvt, Ltd. I will not wonder if you insure your car from that web application in USA. It is online insurace web platform designed for Agents as well as customer searching insurance in property causality in USA. I was a main resource person to start that company from scratch. You can vist currently running site at coveredbysage.com but please dont ask what they currently have in the platfrom. I am already in new organization with new role.</p>
-            </div>
-        </div>    
-        <div class="bottom-divider"></div>
+    <div id="skills" class="section">
+        <h2><i class="fas fa-code"></i>Skills</h2>
+        <ul class="skills-list">
+            <li>Java</li>
+            <li>Python</li>
+            <li>Scala</li>
+            <li>Hadoop</li>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>Spring Boot</li>
+            <li>MySQL</li>
+            <li>Elasticsearch</li>
+        </ul>
     </div>
-<!--End Experience Section-->
 
-<!--Begin Work Section-->  
-    <div id="work">
-    	 <h1>Resume</h1>
-        <div class="top-divider"></div>
-        	<div class="content">
-You can look at my not so updated resume here : <a href="https://github.com/pramil-paudel/pramil-paudel.github.io/blob/gh-pages/Pramil_Paudel_Resume.pdf">Resume</a>
-            </div>
-        <div class="bottom-divider"></div>
+    <div id="publications" class="section">
+        <h2><i class="fas fa-book"></i>Publications</h2>
+        <div class="card">
+            <h3>Robust Privacy-Preserving Classification for Lensless Images</h3>
+            <p><strong>IEEE MASS 2024</strong></p>
+            <p>Sumit Bhattarai, Pramil Paudel, Zhu Li, Bo Luo, Fengjun Li</p>
+        </div>
+        <div class="card">
+            <h3>LiGANS: Privacy-Preserving Image-to-Image Steganography</h3>
+            <p><strong>Submitted 2024</strong></p>
+            <p>Pramil Paudel, Bo Luo, Fengjun Li</p>
+        </div>
     </div>
-<!--End Work Section
 
-<!--Begin Connect Section-->  
-    <!-- <div id="connect">
-    	<h1>Connect</h1>
-        <div class="top-divider"></div>
-        	<div class="content">
-            	<div id="form">
-                	<form action="#">
-                    	<span>Name</span>
-                        <input type="text" name="name" class="name" />
-                        <span>Email</span>
-                        <input type="text" name="email" class="email"/>
-                        <span>Message</span>
-                        <textarea class="message"></textarea>
-                        <input type="submit" name="submite" value="Submit" class="submit">
-                    </form>
-                </div>
-                <div id="social-footer">
-                	<h2>Follow Me:</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras diam risus, dignissim pharetra sagittis sed, adipiscing nec felis. Maecenas non nulla eget ligula semper </p>
-                    <ul id="sm-links">
-                    	<li><a href="#" class="facebook">Facebook</a></li>
-           				<li><a href="#" class="twitter">Twitter</a></li>
-            			<li><a href="#" class="dribble">Dribble</a></li>
-                        <li><a href="#" class="vimeo">Vimeo</a></li>
-                        <li><a href="#" class="youtube">YouTube</a></li>
-                        <li><a href="#" class="linkedin">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-    </div> -->
-<!--End Connect Section--> 
+    <div id="education" class="section">
+        <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+        <div class="card">
+            <h3>Ph.D. in Computer Science</h3>
+            <p><strong>University of Kansas</strong> | Jan 2020 - Current</p>
+        </div>
+        <div class="card">
+            <h3>BE in Electronics and Communication Engineering</h3>
+            <p><strong>Tribhuvan University</strong> | Jan 2011 - Dec 2014</p>
+        </div>
+    </div>
 
-</div> -->
+    <div id="outreach" class="section">
+        <h2><i class="fas fa-hands-helping"></i>Leadership & Outreach</h2>
+        <div class="card">
+            <h3>President</h3>
+            <p><strong>Nepalese Student Association</strong> | 2021-2022</p>
+            <ul class="bulleted-details">
+                <li>Organized cultural and academic events to foster community and collaboration among Nepalese students.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Secretary</h3>
+            <p><strong>International Nepali Literature Society</strong> | 2024-2026</p>
+            <ul class="bulleted-details">
+                <li>Coordinated international conferences and workshops to promote Nepali culture and literature.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>President</h3>
+            <p><strong>Engineering Literature Forum</strong> | 2012-2014</p>
+            <ul class="bulleted-details">
+                <li>Organized seminars and writing competitions focused on engineering and literature for students.</li>
+            </ul>
+        </div>
+    </div>
 
- <!-- The JavaScript -->  
-        <script type="text/javascript">
-    		$(function() {
-                $('#main-menu li a').bind('click',function(event){
-                    var $anchor = $(this);
-                    
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1500,'easeInOutExpo');
+    <div id="resume" class="section">
+        <h2><i class="fas fa-file"></i>Resume</h2>
+        <p>You can view my full resume <a href="https://github.com/pramil-paudel/pramil-paudel.github.io/blob/gh-pages/Pramil_Paudel_Resume.pdf">here</a>.</p>
+    </div>
+</div>
 
-                    event.preventDefault();
-                });
-            });
-			
- 			 $(document).ready(function(){
-    		$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false, deeplinking: false});
-  			});
 
-        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>&copy; 2024 Pramil Paudel. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
