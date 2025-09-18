@@ -9,7 +9,7 @@
   --accent-2:#5ca3ff;
 
   /* layout */
-  --maxw:1320px;
+  --maxw:900px;
   --radius:16px;
   --shadow: 0 1px 2px rgba(16,24,40,.06), 0 10px 30px rgba(16,24,40,.08);
 
@@ -23,7 +23,7 @@ html{scroll-behavior:smooth}
 
 body{
   margin:0;
-  font: 500 19px/1.8 "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  font: 500 13px/1.8 "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color:var(--ink);
   background:var(--bg);
   text-rendering:optimizeLegibility;
@@ -317,3 +317,49 @@ footer{
   .lb-next{ right:8px }
   .lb-close{ top:-48px; ri
 }
+/* compact, organized hero helpers */
+.actions{
+  display:flex;
+  gap:12px 16px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.actions .social{ margin:0 }              /* remove default bottom margin */
+
+.pills{ margin-top:8px }                  /* tighten above pills */
+.pill{ font-size:.95rem }                 /* slightly smaller pills */
+
+/* optional: make the subtitle + pills feel balanced */
+.subtitle{ margin-bottom:10px }
+
+/* --- Hero spacing fixes --- */
+
+/* bring role + subtitle closer together */
+.header .role{
+  margin-top: 2px;
+  margin-bottom: 6px;   /* was larger; reduces the gap */
+}
+.header .subtitle{
+  margin-top: 0;
+  margin-bottom: 8px;   /* a small cushion before pills */
+}
+
+/* add space between pills and social row */
+.pills{
+  gap: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;  /* creates clear separation from icons */
+}
+
+/* actions row stays tidy; ensure no extra margin from .social */
+.actions{
+  display: flex;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 0;        /* spacing controlled by .pills above */
+}
+.actions .social{ margin: 0; }
+
+/* (optional) slightly smaller pill size so it feels lighter */
+.pill{ font-size: .95rem; padding: 7px 11px; }
