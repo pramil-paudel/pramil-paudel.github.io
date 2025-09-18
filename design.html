@@ -6,91 +6,20 @@
   <title>Design Works — Pramil Paudel</title>
   <meta name="description" content="Design and visual work by Pramil Paudel." />
   <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <!-- Fonts to match styles.css -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Page-specific styles: gallery + lightbox -->
+  <!-- Page-specific styles: filters & small tweaks only -->
   <style>
-    .gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap:18px;
+    .filters{ display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 14px }
+    .filters .chip[aria-pressed="true"]{
+      background:linear-gradient(180deg,var(--accent),#094f9f);
+      color:#fff; border-color:transparent; box-shadow:0 8px 20px rgba(11,99,206,.24);
     }
-    .tile{
-      position:relative;
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:var(--surface);
-      box-shadow: var(--shadow);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .tile:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(11,99,206,.14);
-    }
-    .shot{
-      width:100%;
-      height:100%;
-      display:block;
-      aspect-ratio: 1/1;              /* default square; overridden by variants below */
-      object-fit:cover;
-      object-position: 50% 20%;
-      background:#f4f6f8;
-    }
-    .tile.wide .shot{ aspect-ratio: 16/9; }
-    .tile.tall .shot{ aspect-ratio: 3/4; }
-
-    .caption{
-      position:absolute; left:10px; bottom:10px;
-      background: rgba(16,18,22,.55);
-      color:#fff; padding:6px 10px; border-radius:10px;
-      font-size:.92rem; letter-spacing:.1px;
-      backdrop-filter: blur(4px);
-    }
-
-    /* Lightbox */
-    .lightbox[hidden]{ display:none !important; }
-    .lightbox{
-      position:fixed; inset:0; z-index:9999;
-      background: rgba(0,0,0,.78);
-      display:flex; align-items:center; justify-content:center;
-      padding:24px;
-    }
-    .lb-inner{ position:relative; max-width:92vw; max-height:86vh }
-    .lb-img{
-      max-width:92vw; max-height:86vh; width:auto; height:auto;
-      border-radius:14px; border:1px solid rgba(255,255,255,.25);
-      box-shadow: 0 20px 60px rgba(0,0,0,.5);
-      display:block;
-    }
-    .lb-caption{
-      color:#fff; text-align:center; margin-top:10px; opacity:.9;
-      font-size:.98rem;
-    }
-    .lb-btn{
-      position:absolute; top:50%; transform:translateY(-50%);
-      width:44px; height:44px; border-radius:999px; border:1px solid rgba(255,255,255,.35);
-      background: rgba(0,0,0,.35); color:#fff;
-      display:flex; align-items:center; justify-content:center;
-      cursor:pointer;
-      transition: background .15s ease, transform .15s ease;
-    }
-    .lb-btn:hover{ background: rgba(0,0,0,.55); transform: translateY(-50%) scale(1.04) }
-    .lb-prev{ left:-56px }
-    .lb-next{ right:-56px }
-    .lb-close{
-      position:absolute; top:-54px; right:0;
-      width:40px; height:40px; border-radius:999px; border:1px solid rgba(255,255,255,.35);
-      background: rgba(0,0,0,.35); color:#fff; cursor:pointer;
-      display:flex; align-items:center; justify-content:center;
-    }
-    @media (max-width: 820px){
-      .lb-prev{ left:8px }
-      .lb-next{ right:8px }
-      .lb-close{ top:-48px; right:8px }
-    }
+    .tile{ outline:none }
+    .tile:focus-visible{ box-shadow:0 0 0 3px rgba(11,99,206,.25), 0 10px 26px rgba(16,24,40,.18) }
   </style>
 </head>
 <body>
@@ -107,7 +36,7 @@
         <a class="tab" href="services.html">Services</a>
         <a class="tab" aria-current="page" href="design.html">Design Works</a>
         <a class="tab" href="education.html">Education</a>
-        </div>
+      </div>
     </nav>
 
     <div class="hero">
@@ -115,7 +44,7 @@
         <figure class="portrait"><img src="images/profile.jpg" alt="Portrait of Pramil Paudel"></figure>
         <div>
           <h1>Design Works</h1>
-          <p class="subtitle">A small gallery of UI and graphic work.</p>
+          <p class="subtitle">Selected UI, web, posters, and identity explorations.</p>
         </div>
       </header>
     </div>
@@ -127,49 +56,62 @@
           <div class="card">
             <h2>Gallery</h2>
 
-            <div class="gallery-grid" id="gallery">
-              <!-- Use profile.jpg 10 times for now -->
-              <a class="tile wide"   href="images/design_one.jpg" data-caption="Dashboard concept">
-                <img class="shot" src="images/design_one.jpg" alt="Dashboard concept" loading="lazy">
-              </a>
-
-              <a class="tile tall"   href="images/design_two.jpg" data-caption="Poster / banner">
-                <img class="shot" src="images/design_two.jpg" alt="Poster / banner" loading="lazy">
-              </a>
-
-              <a class="tile"        href="images/design_three.jpg" data-caption="Landing page mock">
-                <img class="shot" src="images/design_three.jpg" alt="Landing page mock" loading="lazy">
-              </a>
-
-              <a class="tile wide"   href="images/design_four.png" data-caption="Mobile UI — cards">
-                <img class="shot" src="images/design_four.png" alt="Mobile UI — cards" loading="lazy">
-              </a>
-
-              <a class="tile tall"   href="images/design_five.jpg" data-caption="Visual identity">
-                <img class="shot" src="images/design_five.jpg" alt="Visual identity" loading="lazy">
-              </a>
-
-              <a class="tile"        href="images/design_six.jpg" data-caption="Infographic">
-                <img class="shot" src="images/design_six.jpg" alt="Infographic" loading="lazy">
-              </a>
-
-              <a class="tile wide"   href="images/profile.jpg" data-caption="Hero header art">
-                <img class="shot" src="images/profile.jpg" alt="Hero header art" loading="lazy">
-              </a>
-
-              <a class="tile tall"   href="images/profile.jpg" data-caption="Event poster">
-                <img class="shot" src="images/profile.jpg" alt="Event poster" loading="lazy">
-              </a>
-
-              <a class="tile"        href="images/profile.jpg" data-caption="Data viz concept">
-                <img class="shot" src="images/profile.jpg" alt="Data viz concept" loading="lazy">
-              </a>
-
-              <a class="tile wide"   href="images/profile.jpg" data-caption="Logo exploration">
-                <img class="shot" src="images/profile.jpg" alt="Logo exploration" loading="lazy">
-              </a>
+            <!-- Filter bar -->
+            <div class="filters" id="filters">
+              <button class="chip" data-filter="all" aria-pressed="true">All</button>
             </div>
 
+            <div class="gallery-grid" id="gallery" role="list">
+              <!-- Tag with data-tags="ui web poster identity" as needed. Reuse existing files to avoid 404s. -->
+              <a class="tile wide" href="images/design_one.jpg" data-caption="Dashboard concept" data-tags="ui web" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_one.jpg" alt="Dashboard concept" loading="lazy"><span class="caption">Dashboard concept</span>
+              </a>
+
+              <a class="tile tall" href="images/design_two.jpg" data-caption="Event poster" data-tags="poster" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_two.jpg" alt="Event poster" loading="lazy"><span class="caption">Event poster</span>
+              </a>
+
+              <a class="tile" href="images/design_three.jpg" data-caption="Landing page mock" data-tags="web ui" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_three.jpg" alt="Landing page mock" loading="lazy"><span class="caption">Landing page</span>
+              </a>
+
+              <a class="tile wide" href="images/design_four.png" data-caption="Mobile UI — cards" data-tags="ui" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_four.png" alt="Mobile UI cards" loading="lazy"><span class="caption">Mobile UI</span>
+              </a>
+
+              <a class="tile tall" href="images/design_five.jpg" data-caption="Logo / identity exploration" data-tags="identity" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_five.jpg" alt="Logo identity exploration" loading="lazy"><span class="caption">Identity</span>
+              </a>
+
+              <a class="tile" href="images/design_six.jpg" data-caption="Infographic concept" data-tags="poster web" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_six.jpg" alt="Infographic concept" loading="lazy"><span class="caption">Infographic</span>
+              </a>
+
+              <a class="tile wide" href="images/design_seven.jpg" data-caption="Hero header artwork" data-tags="web" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_seven.jpg" alt="Hero header artwork" loading="lazy"><span class="caption">Hero header</span>
+              </a>
+
+              <!-- tasteful duplicates to enrich the layout -->
+              <a class="tile" href="images/design_one.jpg" data-caption="Dashboard — alt colorway" data-tags="ui web" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_one.jpg" alt="Dashboard alt colorway" loading="lazy"><span class="caption">Dashboard alt</span>
+              </a>
+
+              <a class="tile tall" href="images/design_two.jpg" data-caption="Poster series — variant" data-tags="poster" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_two.jpg" alt="Poster variant" loading="lazy"><span class="caption">Poster variant</span>
+              </a>
+
+              <a class="tile wide" href="images/design_four.png" data-caption="Mobile UI — dark mode" data-tags="ui" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_four.png" alt="Mobile UI dark mode" loading="lazy"><span class="caption">Mobile UI • dark</span>
+              </a>
+
+              <a class="tile" href="images/design_six.jpg" data-caption="Data viz layout" data-tags="web" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_six.jpg" alt="Data visualization layout" loading="lazy"><span class="caption">Data viz</span>
+              </a>
+
+              <a class="tile tall" href="images/design_five.jpg" data-caption="Monogram study" data-tags="identity" role="listitem" tabindex="0">
+                <img class="shot" src="images/design_five.jpg" alt="Monogram study" loading="lazy"><span class="caption">Monogram</span>
+              </a>
+            </div>
           </div>
         </section>
       </div>
@@ -189,52 +131,78 @@
     </div>
   </div>
 
-  <!-- Tiny vanilla JS lightbox -->
+  <!-- Filters + Lightbox JS -->
   <script>
     (function(){
-      const items = Array.from(document.querySelectorAll('#gallery .tile'));
-      const lb   = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lbImg');
+      const gallery = document.getElementById('gallery');
+      const items   = Array.from(gallery.querySelectorAll('.tile'));
+      const filters = document.getElementById('filters');
+      const lb      = document.getElementById('lightbox');
+      const lbImg   = document.getElementById('lbImg');
       const lbCaption = document.getElementById('lbCaption');
       const btnPrev = document.getElementById('lbPrev');
       const btnNext = document.getElementById('lbNext');
-      const btnClose = document.getElementById('lbClose');
+      const btnClose= document.getElementById('lbClose');
+      let visible   = items.slice();
       let idx = 0;
 
+      // --- Filtering ---
+      function setFilter(tag){
+        visible = [];
+        items.forEach(el => {
+          const tags = (el.dataset.tags || '').split(/\s+/);
+          const show = (tag === 'all') || tags.includes(tag);
+          el.style.display = show ? '' : 'none';
+          if (show) visible.push(el);
+        });
+      }
+      filters.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+        filters.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        setFilter(btn.dataset.filter);
+      });
+
+      // --- Lightbox ---
       function open(i){
-        idx = i;
-        const a = items[idx];
+        if (!visible.length) return;
+        idx = (i + visible.length) % visible.length;
+        const a = visible[idx];
         lbImg.src = a.getAttribute('href');
         lbImg.alt = a.querySelector('.shot')?.alt || '';
-        lbCaption.textContent = a.dataset.caption || '';
+        const n = idx + 1, total = visible.length;
+        const cap = a.dataset.caption || '';
+        lbCaption.textContent = `${cap}  —  ${n}/${total}`;
         lb.hidden = false;
         document.body.style.overflow = 'hidden';
+        // preload neighbors
+        const preL = new Image(); preL.src = visible[(idx-1+total)%total].getAttribute('href');
+        const preR = new Image(); preR.src = visible[(idx+1)%total].getAttribute('href');
       }
-      function close(){
-        lb.hidden = true;
-        document.body.style.overflow = '';
-        lbImg.src = '';
-      }
-      function prev(){ open((idx - 1 + items.length) % items.length); }
-      function next(){ open((idx + 1) % items.length); }
+      function close(){ lb.hidden = true; document.body.style.overflow = ''; lbImg.src = '' }
+      function prev(){ open(idx-1) }
+      function next(){ open(idx+1) }
 
       items.forEach((a, i) => {
-        a.addEventListener('click', (e) => { e.preventDefault(); open(i); });
+        a.addEventListener('click', e => { e.preventDefault(); open(i) });
+        a.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i) }
+        });
       });
       btnPrev.addEventListener('click', prev);
       btnNext.addEventListener('click', next);
       btnClose.addEventListener('click', close);
-
-      lb.addEventListener('click', (e) => {
-        if (e.target === lb) close();  // click outside image closes
-      });
-
-      document.addEventListener('keydown', (e) => {
+      lb.addEventListener('click', e => { if (e.target === lb) close() });
+      document.addEventListener('keydown', e => {
         if (lb.hidden) return;
         if (e.key === 'Escape') close();
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
       });
+
+      // default filter
+      setFilter('all');
     })();
   </script>
 </body>
