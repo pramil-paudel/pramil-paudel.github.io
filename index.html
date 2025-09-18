@@ -1,507 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pramil Paudel - Resume Blog</title>
-<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' rel='stylesheet'>
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        background: linear-gradient(120deg, #ffffff, #e8f0fe);
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pramil Paudel</title>
+  <meta name="description" content="Pramil Paudel — privacy-preserving ML, lensless imaging, and software engineering." />
+  <link rel="icon" href="favicon.ico" />
+  <!-- Fonts & Icons -->
+<!--  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
 
-    /* Sidebar Styling */
-    .sidebar {
-        width: 300px;
-        background: linear-gradient(180deg, #0077b6, #005f8a);
-        color: white;
-        padding: 20px;
-        position: fixed;
-        height: 100vh;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .sidebar img {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        margin: 0 auto 20px;
-        display: block;
-        border: 4px solid #ffffff;
-    }
-
-    .sidebar h2 {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .sidebar ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .sidebar ul li {
-        margin-bottom: 15px;
-    }
-
-    .sidebar ul li a {
-        text-decoration: none;
-        color: white;
-        padding: 12px;
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.2);
-        transition: background 0.3s, transform 0.2s;
-        position: relative;
-    }
-
-    .sidebar ul li a:hover, .sidebar ul li a.active {
-        background: rgba(255, 255, 255, 0.6);
-        transform: translateX(0);
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .sidebar ul li a i {
-        margin-right: 10px;
-        color: white;
-    }
-
-    /* Content Styling */
-        .content {
-        margin-left: 320px;
-        padding: 20px;
-        flex-grow: 1;
-        background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(232, 240, 254, 0.9));
-        box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(10px);
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        z-index: -1;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-
-    .content h1 {
-        color: #005f8a;
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .content h1::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 4px;
-        background: linear-gradient(to right, #0077b6, #005f8a);
-        margin: 10px auto 20px;
-        border-radius: 2px;
-    }
-
-    .tagline {
-        text-align: center;
-        color: #0077b6;
-        font-size: 1.2em;
-        margin-bottom: 30px;
-    }
-
-    .section {
-        margin-bottom: 40px;
-    }
-
-    .section h2 {
-        color: #005f8a;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        font-size: 2em;
-    }
-
-    .section h2 i {
-        margin-right: 10px;
-        color: #005f8a;
-    }
-
-    .card {
-        background: #f9f9f9;
-        padding: 20px;
-        margin-bottom: 30px;
-        border-radius: 10px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card h3 {
-        margin-top: 0;
-        color: #0077b6;
-        font-size: 1.8em;
-    }
-
-    .ribbon {
-        position: fixed;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        background: linear-gradient(180deg, #0077b6, #005f8a);
-        color: white;
-        padding: 10px 20px;
-        font-size: 1.2em;
-        font-weight: bold;
-        border-radius: 8px 0 0 8px;
-        cursor: pointer;
-        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        z-index: 3;
-    }
-
-    .ribbon:hover {
-        background: linear-gradient(180deg, #005f8a, #003f5a);
-    }
-
-    .floating-download {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(180deg, #0077b6, #005f8a);
-        color: white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5em;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        text-decoration: none;
-        transition: background 0.3s, transform 0.2s;
-        z-index: 3;
-    }
-
-    .floating-download:hover {
-        background: linear-gradient(180deg, #005f8a, #003f5a);
-        transform: scale(1.1);
-    }
-
-    footer {
-        text-align: center;
-        padding: 25px;
-        background: #e3f2fd;
-        color: #005f8a;
-        border-top: 2px solid #0077b6;
-        margin-top: auto;
-    }
-
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .skills-list li {
-        list-style: none;
-        background: #0077b6;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 8px;
-        font-weight: bold;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-    }
-
-    .skills-list li:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 20px 0;
-    }
-
-    .social-links a {
-        color: #005f8a;
-        font-size: 2.5em;
-        text-decoration: none;
-        transition: color 0.3s, transform 0.3s;
-    }
-
-    .social-links a:hover {
-        color: #0077b6;
-        transform: scale(1.2);
-    }
-
-    .social-links i {
-        display: block;
-    }
-
-    /* Highlight Sidebar on Scroll */
-    .sidebar ul li a.active {
-        background: rgba(255, 255, 255, 0.6);
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-        font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-        .sidebar {
-            position: relative;
-            width: 100%;
-            height: auto;
-            box-shadow: none;
-        }
-
-        .content {
-            margin-left: 0;
-            padding: 20px;
-        }
-
-        .ribbon {
-            display: none;
-        }
-
-        .floating-download {
-            bottom: 10px;
-            right: 10px;
-        }
-    }
-
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('.sidebar ul li a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach((link) => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="page-bg" aria-hidden="true"></div>
 
-<div class="sidebar">
-    <img src="images/profile.jpg" alt="Profile Picture">
-    <h2>Pramil Paudel</h2>
-    <ul>
-        <li><a href="#about"><i class="fas fa-user"></i>About</a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
-        <li><a href="#skills"><i class="fas fa-code"></i>Skills</a></li>
-        <li><a href="#publications"><i class="fas fa-book"></i>Publications</a></li>
-        <li><a href="#education"><i class="fas fa-graduation-cap"></i>Education</a></li>
-        <li><a href="#outreach"><i class="fas fa-hands-helping"></i>Outreach</a></li>
-<!--        <li><a href="#resume"><i class="fas fa-file"></i>Resume</a></li>-->
-    </ul>
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <div class="site-title">Pramil Paudel</div>
+      <div class="tabs">
+        <a class="tab" aria-current="page" href="index.html">Home</a>
+        <a class="tab" href="publications.html">Publications</a>
+        <a class="tab" href="experience.html">Experience</a>
+        <a class="tab" href="teachings.html">Teachings</a>
+        <a class="tab" href="skills.html">Skills</a>
+        <a class="tab" href="services.html">Services</a>
+        <a class="tab" href="design.html">Design Works</a>
+        <a class="tab" href="education.html">Education</a>
+      </div>
+    </nav>
 
-</div>
-
-<div class="content">
-    <h1>Exploring the Path of Progress</h1>
-    <p class="tagline">Dedicated to crafting innovative solutions in AI and software development</p>
-
-    <div class="social-links">
-        <a href="https://www.facebook.com/patharyodash" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://x.com/Patthar_pramil" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/pramilp/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:ppaudel35@gmail.com"><i class="fas fa-envelope"></i></a>
+    <!-- HERO -->
+    <div class="hero">
+      <header class="header">
+        <figure class="portrait">
+          <img src="images/profile.jpg" alt="Portrait of Pramil Paudel" />
+        </figure>
+        <div>
+          <h1>Pramil Paudel</h1>
+          <p class="role">PhD Candidate, Computer Science — University of Kansas</p>
+          <p class="subtitle">Privacy-preserving machine learning · Lensless imaging · Backend & DevOps</p>
+          <div class="social">
+            <a href="mailto:ppaudel35@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/pramilp/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/Patthar_pramil" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/patharyodash" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+          </div>
+          <div class="chips">
+            <a class="chip primary" href="Pramil_Paudel_Resume.pdf" download><i class="fas fa-file-pdf"></i> Download CV</a>
+          </div>
+        </div>
+      </header>
     </div>
 
-    <div id="about" class="section">
-        <h2><i class="fas fa-user"></i>About Me</h2>
-        <p>I am Pramil Paudel, a PhD student in Computer Science at the University of Kansas. I specialize in privacy-preserving machine learning, backend development, and devops. With over five years of experience in software engineering, I am passionate about solving complex problems with innovative solutions.</p>
+    <!-- BIO -->
+    <div class="band band--light">
+      <div class="inner">
+        <section id="bio">
+          <div class="card">
+            <h2>Bio</h2>
+            <p>
+              I’m a PhD student in Computer Science at the University of Kansas working at the intersection of
+              privacy-preserving machine learning and computational (lensless) imaging. My recent work explores how to
+              train and deploy robust classifiers and image-to-image models (CNNs, GANs, Transformers) while minimizing
+              exposure of sensitive visual data—e.g., steganographic encodings and defenses that keep signals useful for
+              learning but opaque for humans. I care about methods that are measurable, reproducible, and practical to ship.
+            </p>
+
+            <p>
+              Before graduate school I spent ~5 years in industry as a software engineer and solution architect, building
+              distributed systems with Java/Spring, Spark/Hadoop, Elasticsearch, Docker, and CI/CD on cloud.
+              At KU I collaborate with physics on real-time, data-intensive workloads and have taught/assisted courses in
+              Python, OOP, and Data Structures. I also serve in Nepali student and literature organizations. I’m open to
+              collaborations on trustworthy AI, efficient training, and privacy-constrained imaging or healthcare ML—feel
+              free to reach out.
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <div id="experience" class="section">
-        <h2><i class="fas fa-briefcase"></i>Experience</h2>
-        <div class="card">
-            <h3>Ph.D. Candidate</h3>
-            <p><strong>University of Kansas</strong> | Jan 2020 - Present</p>
-            <ul class="bulleted-details">
-                <li>Spearheaded groundbreaking research in lensless image privacy-preserving machine learning solutions.</li>
-                <li>Taught courses on Python programming, object-oriented programming, and data structures.</li>
-                <li>Collaborated with the Physics Department on real-time high-energy physics exploration.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Solution Architect</h3>
-            <p><strong>Renegade Insurance, Inc.</strong> | Dec 2018 - Dec 2019</p>
-            <ul class="bulleted-details">
-                <li>Conceptualized and engineered a highly resilient Java-based insurance platform.</li>
-                <li>Implemented real-time policy generation and CI/CD workflows.</li>
-                <li>Documented strategies for data storage, quality control, and project phases.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Freelance Programmer</h3>
-            <p><strong>Upwork, Freelancer</strong> | Sept 2017 - Dec 2019</p>
-            <ul class="bulleted-details">
-                <li>Created an advertisement search engine using Elasticsearch query builders.</li>
-                <li>Developed autonomous IoT systems leveraging Java frameworks.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Lead Software Engineer</h3>
-            <p><strong>Cedargate Inc.</strong> | Dec 2014 - May 2017</p>
-            <ul class="bulleted-details">
-                <li>Designed and implemented big data solutions for US healthcare claims.</li>
-                <li>Utilized Hadoop MapReduce and Apache Spark for scalable data processing.</li>
-                <li>Enhanced cloud-based real-time processing capabilities.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Engineering Manager</h3>
-            <p><strong>National Incubation and Research Center</strong> | May 2017 - Sept 2017</p>
-            <ul class="bulleted-details">
-                <li>Led a team of 20 software engineers to establish server infrastructure for critical tools like Redmine and Jenkins.</li>
-                <li>Implemented end-to-end CI/CD automation pipelines for software projects.</li>
-                <li>Developed data processing frameworks using Apache Spark and Grails for web applications.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Instructor and Trainer</h3>
-            <p><strong>Four G, Engineering Solutions Ltd.</strong> | Sept 2017 - Dec 2019</p>
-            <ul class="bulleted-details">
-                <li>Provided training in microcontrollers, computer organization, and web application development frameworks.</li>
-                <li>Designed educational programs for Groovy on Grails, Spring Boot, and Java Servlets.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>Software Developer</h3>
-            <p><strong>Yotcha Inc.</strong> | Jan 2015 - Jan 2016</p>
-            <ul class="bulleted-details">
-                <li>Developed high-performance web applications for real estate using Groovy on Grails.</li>
-                <li>Integrated cloud-based real estate data and marketing analytics into the platform.</li>
-            </ul>
-        </div>
-    </div>
+<!-- RESEARCH -->
+<div class="band">
+  <div class="inner">
+    <section id="research">
+      <div class="card">
+        <h2>Research</h2>
+        <div class="grid">
 
-    <div id="skills" class="section">
-        <h2><i class="fas fa-code"></i>Skills</h2>
-        <ul class="skills-list">
-            <li>Java</li>
-            <li>Python</li>
-            <li>Scala</li>
-            <li>Hadoop</li>
-            <li>PyTorch</li>
-            <li>TensorFlow</li>
-            <li>Spring Boot</li>
-            <li>MySQL</li>
-            <li>Elasticsearch</li>
-        </ul>
-    </div>
-
-    <div id="publications" class="section">
-        <h2><i class="fas fa-book"></i>Publications</h2>
-        <div class="card">
-            <h3>Book: Basic Electronics Engineering</h3>
-            <p><strong>Heritage Publication, Bhotahity, Kathmandu</strong></p>
-            <p>Bikal Adhikari, Pramil Paudel</p>
-        </div>
-        <div class="card">
-            <h3>Robust Privacy-Preserving Classification for Lensless Images</h3>
-            <p><strong>IEEE MASS 2024</strong></p>
-            <p>Sumit Bhattarai, Pramil Paudel, Zhu Li, Bo Luo, Fengjun Li</p>
-        </div>
-        <div class="card">
-            <h3>LiGANS: Privacy-Preserving Image-to-Image Steganography</h3>
-            <p><strong>Submitted 2024</strong></p>
-            <p>Pramil Paudel, Bo Luo, Fengjun Li</p>
-        </div>
-    </div>
-
-    <div id="education" class="section">
-        <h2><i class="fas fa-graduation-cap"></i>Education</h2>
-        <div class="card">
-            <h3>Ph.D. in Computer Science</h3>
-            <p><strong>University of Kansas</strong> | Jan 2020 - Current</p>
-        </div>
-        <div class="card">
-            <h3>BE in Electronics and Communication Engineering</h3>
-            <p><strong>Tribhuvan University</strong> | Jan 2011 - Dec 2014</p>
-        </div>
-    </div>
-
-    <div id="outreach" class="section">
-        <h2><i class="fas fa-hands-helping"></i>Leadership & Outreach</h2>
-        <div class="card">
-            <h3>President</h3>
-            <p><strong>Nepalese Student Association</strong> | 2021-2022</p>
-            <ul class="bulleted-details">
-                <li>Organized cultural and academic events to foster community and collaboration among Nepalese students.</li>
+          <!-- 1) Privacy & Security in Imaging and Surveillance -->
+          <div class="item">
+            <div class="title">Privacy & Security in Imaging and Surveillance</div>
+            <div class="meta">Lensless/low-light imaging · Steganography · Robust classification</div>
+            <ul class="clean">
+              <li>Design privacy-preserving pipelines for lensless cameras that keep human-readable content obfuscated while retaining features needed for ML.</li>
+              <li>Develop image-to-image steganographic encodings (e.g., GAN-based) and defenses that protect sensitive visual information in transit and at rest.</li>
+              <li>Adversarially robust classification for degraded/encoded imagery; evaluation under common corruptions and threat models.</li>
+              <li>End-to-end reproducible benchmarks for comparing privacy vs. utility trade-offs.</li>
             </ul>
-        </div>
-        <div class="card">
-            <h3>Secretary</h3>
-            <p><strong>International Nepali Literature Society</strong> | 2024-2026</p>
-            <ul class="bulleted-details">
-                <li>Coordinated international conferences and workshops to promote Nepali culture and literature.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3>President</h3>
-            <p><strong>Engineering Literature Forum</strong> | 2012-2014</p>
-            <ul class="bulleted-details">
-                <li>Organized seminars and writing competitions focused on engineering and literature for students.</li>
-            </ul>
-        </div>
-    </div>
+            <div class="pills" aria-label="keywords">
+              <span class="pill">Lensless Imaging</span>
+              <span class="pill">Generative Adversarial Networks</span>
+              <span class="pill">Steganography</span>
+              <span class="pill">Adversarial Robustness</span>
+              <span class="pill">PyTorch</span>
+            </div>
+          </div>
 
-<!--    <div id="resume" class="section">-->
-<!--        <h2><i class="fas fa-file"></i>Resume</h2>-->
-<!--        <p>You can view my full resume <a href="https://github.com/pramil-paudel/pramil-paudel.github.io/blob/gh-pages/Pramil_Paudel_Resume.pdf">here</a>.</p>-->
-<!--    </div>-->
+          <!-- 2) High-Energy Physics Real-Time Data Processing -->
+          <div class="item">
+            <div class="title">High-Energy Physics Real-Time Data Processing</div>
+            <div class="meta">Streaming ML · Trigger systems · GPU/FPGA acceleration</div>
+            <ul class="clean">
+              <li>Build low-latency inference for streaming detector data, targeting trigger-like constraints and strict throughput budgets.</li>
+              <li>Online feature extraction and anomaly detection for rare-event discovery with bounded memory and compute.</li>
+              <li>Scaled data cleaning pipelines (Spark/Hadoop/Elasticsearch) for rapid dimensionality reduction.</li>
+              <li>Reproducible dataflows with containerized deployments and CI/CD for experimental runs.</li>
+            </ul>
+            <div class="pills" aria-label="keywords">
+              <span class="pill">SVD</span>
+              <span class="pill">Dimensionality Reduction</span>
+              <span class="pill">FPGA</span>
+            </div>
+          </div>
+
+          <!-- 3) LLMs: Attacks & Defenses -->
+          <div class="item">
+            <div class="title">Large Language Models: Attacks & Defenses</div>
+            <div class="meta">Prompt injection · Jailbreaks · Data leakage · Model extraction</div>
+            <ul class="clean">
+              <li>Characterize attack surfaces (prompt injection, indirect injection, jailbreaks) against agentic and tool-using LLMs.</li>
+              <li>Guardrail design & eval: content filters, policy-aware decoding, retrieval hardening, and input/output sanitization.</li>
+              <li>Membership/model inversion risk assessments for fine-tuned models; red-teaming workflows and metrics.</li>
+              <li>Poisoning-resilient training/evaluation with dataset and pipeline provenance.</li>
+            </ul>
+            <div class="pills" aria-label="keywords">
+              <span class="pill">Prompt Injection</span>
+              <span class="pill">Jailbreaks</span>
+              <span class="pill">RAG Hardening</span>
+              <span class="pill">Privacy Audits</span>
+              <span class="pill">Secure Decoding</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 
-<div class="ribbon" onclick="window.location.href='mailto:ppaudel35@gmail.com';">
-    Contact Me
-</div>
-<a href="Pramil_Paudel_Resume.pdf" download class="floating-download">CV</a>
-<footer>
-    <p>&copy; 2024 Pramil Paudel. All rights reserved.</p>
-</footer>
+    <!-- EDUCATION -->
+    <div class="band band--alt">
+      <div class="inner">
+        <section id="education">
+          <div class="card">
+            <h2>Education</h2>
+            <ul class="clean">
+              <li><strong>PhD in Computer Science</strong>, University of Kansas (2020–Present)</li>
+              <li><strong>BE in Electronics & Communication Engineering</strong>, Tribhuvan University (2011–2014)</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
 
+    <!-- EXPERIENCE -->
+    <div class="band band--light">
+      <div class="inner">
+        <section id="experience">
+          <div class="card">
+            <h2>Experience</h2>
+            <p>See the <a href="experience.html">Experience page</a> for full details.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- RECENT NEWS -->
+    <div class="band">
+      <div class="inner">
+        <section id="news">
+          <div class="card">
+            <h2>Recent News</h2>
+            <ul class="clean">
+              <li>2025 — Scheduled talk at AI4EIC</li>
+              <li>2025 — Paper accepted to International Conference on Machine Learning and Applications (ICMLA) </li>
+              <li>2024 — Paper accepted to IEEE MASS (lensless classification).</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>© 2025 Pramil Paudel</footer>
+  </div>
 </body>
 </html>
