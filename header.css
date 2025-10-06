@@ -267,3 +267,42 @@
 .hero, .page-bg {
   z-index: 1;           /* still below header's 10000+ */
 }
+/* Default (desktop): side-by-side layout is fine */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Profile image rounded and clean */
+.portrait img {
+  display: block;
+  border-radius: 50%;
+  max-width: 160px;
+  height: auto;
+}
+
+/* --- Mobile breakpoint: center everything --- */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;      /* stack image and text vertically */
+    align-items: center;         /* center horizontally */
+    text-align: center;          /* center text */
+  }
+
+  .portrait {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;         /* spacing between image and text */
+  }
+
+  .profile-body {
+    align-items: center;
+  }
+
+  .profile-body .actions,
+  .profile-body .social {
+    justify-content: center;
+    text-align: center;
+  }
+}
