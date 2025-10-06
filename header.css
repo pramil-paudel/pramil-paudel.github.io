@@ -1,0 +1,216 @@
+/* ===== Pramil Header — Unified Card, Centered Hero, Left Photo ===== */
+:root{
+  --page-max: 1040px;
+  --page-bg: #fbfcfe;
+
+  --brand-dark:#0b1530;
+  --brand:#1b3a8a;
+  --brand-accent:#3b82f6;
+
+  --ink:#0f172a;
+  --muted:#64748b;
+
+  --chip:#eaf1ff;
+  --surface:#ffffff;
+  --ring:#ffffff;
+
+  --radius-lg:14px;
+  --radius-xl:18px;
+
+  --shadow-0:0 1px 3px rgba(12,24,60,.05);
+  --shadow-1:0 4px 16px rgba(2,6,23,.08);
+  --shadow-2:0 12px 28px rgba(2,6,23,.12);
+}
+
+/* Container */
+.site-header .container{
+  max-width:var(--page-max);
+  margin:0 auto;
+  padding:0 18px;
+  box-sizing:border-box;
+}
+
+/* ========== UNIFIED HEADER CARD ========== */
+.header-card{
+  background:var(--surface);
+  border:1px solid #eef2f7;
+  border-radius:16px;
+  box-shadow:var(--shadow-0);
+  overflow:hidden;              /* nav+banner share same radius */
+}
+
+/* ========== BANNER WITH NAV INSIDE (NO SEPARATION) ========== */
+.banner{
+  height:92px;                  /* compact hero bar */
+  background:
+    radial-gradient(900px 260px at 22% -60%, rgba(59,130,246,.28), transparent 58%),
+    linear-gradient(135deg,#0b1530 0%,#10265e 55%,#0b1530 100%);
+  display:flex; align-items:flex-start;
+}
+.nav{
+  width:100%;
+  padding:10px 12px;
+  display:flex; align-items:center; justify-content:space-between;
+  color:#fff;
+  background:transparent;       /* sits on banner */
+}
+.site-header .site-title{color:#fff; font-weight:800; letter-spacing:.2px;}
+.tabs{display:flex; gap:12px; align-items:center;}
+.tab{color:#cfe3ff; text-decoration:none; padding:8px 10px; border-radius:8px; font-weight:600;}
+.tab:hover,.tab[aria-current="page"]{background:rgba(255,255,255,.15); color:#fff;}
+.nav-toggle{display:none; background:transparent; border:0; color:#fff; font-size:22px; line-height:1;}
+
+/* ========== PROFILE AREA (CENTERED CONTENT, LEFT PHOTO) ========== */
+.profile{
+  position:relative;
+  padding:22px 20px 18px;       /* white hero area */
+}
+
+/* Left photo, vertically centered relative to the white hero */
+.portrait{
+  position:absolute;
+  left:24px; top:50%;
+  transform:translateY(-50%);
+  width:150px; height:150px;    /* your requested bigger size */
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid var(--surface);
+  box-shadow:0 12px 28px rgba(2,6,23,.16);
+  background:#fff;
+}
+.portrait img{width:100%; height:100%; object-fit:cover;}
+
+/* Center hero text & reserve space for the photo */
+.profile-body{
+  text-align:center;
+  padding-left:200px;           /* space for 150px photo + ring + breathing room */
+}
+
+/* Headings & copy */
+.name{ margin:6px 0 4px; font-size:1.95rem; font-weight:800; color:var(--ink); letter-spacing:.2px; }
+.role{ margin:0; color:var(--muted); font-weight:600; }
+.subtitle{ margin:8px 0 14px; color:#475569; }
+
+/* Pills & actions */
+.pills{display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:12px;}
+.pill{background:var(--chip); color:var(--brand-dark); padding:6px 12px; border-radius:999px; font-weight:700; font-size:.9rem;}
+
+.actions{display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap;}
+.social a{
+  color:var(--brand-dark);
+  width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  background:#f5f7ff; border-radius:999px; box-shadow:inset 0 0 0 1px rgba(59,130,246,.15);
+  transition:transform .12s ease;
+}
+.social a:hover{ transform:translateY(-1px); }
+.chip.primary{
+  background:var(--brand-accent); color:#fff; padding:9px 14px; border-radius:999px;
+  text-decoration:none; font-weight:800; box-shadow:0 6px 16px rgba(59,130,246,.25);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 980px){
+  .profile-body{ padding-left:180px; }
+}
+@media (max-width: 860px){
+  .nav-toggle{display:block;}
+  .tabs{
+    display:none; position:absolute; right:12px; top:56px;
+    flex-direction:column; background:#0b1530; padding:10px; border-radius:12px; gap:6px;
+    box-shadow:var(--shadow-2); z-index:10;
+  }
+  .tabs.show{display:flex;}
+  .banner{ height:84px; }
+  .portrait{ width:120px; height:120px; left:20px; }
+  .profile-body{ padding-left:160px; }
+}
+@media (max-width: 640px){
+  /* On small screens, center the photo above the text for balance */
+  .portrait{ left:50%; top:0; transform:translate(-50%,-50%); width:108px; height:108px; }
+  .profile{ padding-top:64px; }
+  .profile-body{ padding-left:0; }
+  .name{ font-size:1.7rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  .site-header *{ transition:none !important; animation:none !important; }
+}
+
+/* === Center hero content while keeping photo left === */
+/* Use a 3-column grid: [photo] [content] [phantom spacer same width as photo]
+   so the middle column is truly centered in the card. */
+.profile{
+  display: grid;
+  grid-template-columns: 150px 1fr 150px; /* photo, centered content, balance spacer */
+  align-items: center;
+  gap: 0;
+  padding: 22px 20px 20px;
+  position: relative;
+}
+
+/* Override any previous absolute positioning on the portrait */
+.profile .portrait{
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  justify-self: center;     /* sits neatly in the left column */
+  width: 150px;
+  height: 150px;
+  border: 4px solid #fff;
+  box-shadow: 0 12px 28px rgba(2,6,23,.16);
+}
+
+/* Middle column holds the text — now truly centered in the card */
+.profile-body{
+  grid-column: 2;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Keep spacing visually balanced on the right */
+.profile::after{
+  content:"";               /* phantom spacer equals photo width */
+  grid-column: 3;
+}
+
+/* --- Actions: put Download CV on its own line under the icons (centered) --- */
+.actions{
+  display: flex;
+  flex-direction: column;   /* icons row, then the button */
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Make the primary button look premium */
+.chip.primary{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #3b82f6, #1e56ff);
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 24px rgba(59,130,246,.28);
+  text-decoration: none;
+}
+.chip.primary i{ font-size: 0.95rem; }
+.chip.primary:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+
+/* --- Responsive: stack nicely on mobile --- */
+@media (max-width: 860px){
+  .profile{
+    grid-template-columns: 1fr;       /* single column */
+    padding-top: 64px;
+  }
+  .profile .portrait{
+    justify-self: center;
+    margin-top: -54px;                 /* overlap a little like LinkedIn */
+    width: 120px; height: 120px;
+  }
+  .profile::after{ display: none; }    /* no need for the spacer on mobile */
+}

@@ -1,3 +1,89 @@
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #f9fafc;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+section + section {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 32px;
+}
+
+/* === Unified Background === */
+:root {
+  --page-bg: #f9fafc; /* pick one soft neutral for all sections */
+  --page-max: 1040px;
+}
+
+html, body {
+  background: var(--page-bg);
+  color: #0f172a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force all top-level bands to inherit it */
+.band,
+.band--light,
+.band--alt,
+.wrap,
+.inner,
+.page-bg,
+.container,
+.container-global {
+  background: transparent !important;
+}
+
+/* Ensure consistent width + spacing */
+.wrap,
+.inner,
+.band > .inner,
+.band .inner,
+.container,
+.container-global,
+#header .container {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+
+/* === Global page width + background (hard lock) === */
+:root { --page-max: 1040px; --page-bg: #f6f7fb; }
+
+html, body { background: var(--page-bg); }
+
+/* Force every main container to the same width */
+#header .container,
+.wrap,
+.inner,
+.band > .inner,
+.band .inner,
+.container,
+.container-global {
+  max-width: var(--page-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  box-sizing: border-box !important;
+}
+
+/* Optional: unify cards so header card = body cards */
+.card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px rgba(2,6,23,0.08);
+}
+
+
+
 :root{
   /* palette */
   --bg:#f7f7f5;
@@ -57,6 +143,15 @@ a:hover{ text-decoration:underline; color:#0a54ad }
   will-change: transform;
   animation: floatEdges 28s ease-in-out infinite alternate;
 }
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: transparent; /* was gradient */
+  pointer-events: none;
+}
+
 
 /* fine paper grid on top */
 .page-bg::after{
@@ -212,9 +307,9 @@ h2::after{
 
 /* ===== Full-width section bands ===== */
 .band{
-  margin:18px -28px;
-  padding:22px 28px;
-  border-radius:18px;
+  margin:10px 0px;
+  padding:0px 0px;
+  border-radius:0px;
   border:1px solid #eceef2;
   background:linear-gradient(180deg,#ffffff,#fbfbfd);
 }
@@ -226,10 +321,10 @@ h2::after{
   border:1px solid #eceef2;
 }
 .band > .inner{ max-width:var(--maxw); margin:0 auto }
-.band + .band{ margin-top:20px }
+.band + .band{ margin-top:0px }
 
 /* Sections */
-section{ padding:22px 0 10px }
+section{ padding:10px 0 10px }
 
 /* Cards */
 .card{
@@ -363,3 +458,16 @@ footer{
 
 /* (optional) slightly smaller pill size so it feels lighter */
 .pill{ font-size: .95rem; padding: 7px 11px; }
+/* === Subtle geometric tile background === */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2; /* push below all content but above html background */
+  background-color: #f9fafc;
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}

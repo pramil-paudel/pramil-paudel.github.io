@@ -6,50 +6,46 @@
   <title>Design Works — Pramil Paudel</title>
   <meta name="description" content="Design and visual work by Pramil Paudel." />
   <link rel="icon" href="favicon.ico" />
-  <!-- Fonts to match styles.css -->
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
 
-  <!-- Page-specific styles: filters & small tweaks only -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+
+  <!-- Page-specific tweaks -->
   <style>
-    .filters{ display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 14px }
-    .filters .chip[aria-pressed="true"]{
-      background:linear-gradient(180deg,var(--accent),#094f9f);
-      color:#fff; border-color:transparent; box-shadow:0 8px 20px rgba(11,99,206,.24);
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 6px 0 14px;
     }
-    .tile{ outline:none }
-    .tile:focus-visible{ box-shadow:0 0 0 3px rgba(11,99,206,.25), 0 10px 26px rgba(16,24,40,.18) }
+    .filters .chip[aria-pressed="true"] {
+      background: linear-gradient(180deg, var(--accent), #094f9f);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 8px 20px rgba(11, 99, 206, .24);
+    }
+    .tile { outline: none; }
+    .tile:focus-visible {
+      box-shadow: 0 0 0 3px rgba(11,99,206,.25), 0 10px 26px rgba(16,24,40,.18);
+    }
   </style>
 </head>
+
 <body>
+  <!-- Ambient background -->
   <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- Shared Header -->
+  <div id="header"></div>
+
+  <!-- Main Content -->
   <div class="wrap">
-    <nav class="nav" aria-label="Primary">
-      <div class="site-title">Pramil Paudel</div>
-      <div class="tabs">
-        <a class="tab" href="index.html">Home</a>
-        <a class="tab" href="publications.html">Publications</a>
-        <a class="tab" href="experience.html">Experience</a>
-        <a class="tab" href="teachings.html">Teachings</a>
-        <a class="tab" href="skills.html">Skills</a>
-        <a class="tab" href="services.html">Services</a>
-        <a class="tab" aria-current="page" href="design.html">Design Works</a>
-        <a class="tab" href="education.html">Education</a>
-      </div>
-    </nav>
 
-    <div class="hero">
-      <header class="header">
-        <figure class="portrait"><img src="images/profile.jpg" alt="Portrait of Pramil Paudel"></figure>
-        <div>
-          <h1>Design Works</h1>
-          <p class="subtitle">Selected UI, web, posters, and identity explorations.</p>
-        </div>
-      </header>
-    </div>
-
-    <!-- Gallery -->
     <div class="band">
       <div class="inner">
         <section>
@@ -61,8 +57,8 @@
               <button class="chip" data-filter="all" aria-pressed="true">All</button>
             </div>
 
+            <!-- Gallery grid -->
             <div class="gallery-grid" id="gallery" role="list">
-              <!-- Tag with data-tags="ui web poster identity" as needed. Reuse existing files to avoid 404s. -->
               <a class="tile wide" href="images/design_one.jpg" data-caption="Dashboard concept" data-tags="ui web" role="listitem" tabindex="0">
                 <img class="shot" src="images/design_one.jpg" alt="Dashboard concept" loading="lazy">
               </a>
@@ -90,27 +86,6 @@
               <a class="tile wide" href="images/design_seven.jpg" data-caption="Hero header artwork" data-tags="web" role="listitem" tabindex="0">
                 <img class="shot" src="images/design_seven.jpg" alt="Hero header artwork" loading="lazy">
               </a>
-
-              <!-- tasteful duplicates to enrich the layout -->
-              <a class="tile" href="images/design_one.jpg" data-caption="Dashboard — alt colorway" data-tags="ui web" role="listitem" tabindex="0">
-                <img class="shot" src="images/design_one.jpg" alt="Dashboard alt colorway" loading="lazy">
-              </a>
-
-              <a class="tile tall" href="images/design_two.jpg" data-caption="Poster series — variant" data-tags="poster" role="listitem" tabindex="0">
-                <img class="shot" src="images/design_two.jpg" alt="Poster variant" loading="lazy">
-              </a>
-
-              <a class="tile wide" href="images/design_four.png" data-caption="Mobile UI — dark mode" data-tags="ui" role="listitem" tabindex="0">
-                <img class="shot" src="images/design_four.png" alt="Mobile UI dark mode" loading="lazy">
-              </a>
-
-              <a class="tile" href="images/design_six.jpg" data-caption="Data viz layout" data-tags="web" role="listitem" tabindex="0">
-                <img class="shot" src="images/design_six.jpg" alt="Data visualization layout" loading="lazy">
-              </a>
-
-              <a class="tile tall" href="images/design_five.jpg" data-caption="Monogram study" data-tags="identity" role="listitem" tabindex="0">
-                <img class="shot" src="images/design_five.jpg" alt="Monogram study" loading="lazy">
-              </a>
             </div>
           </div>
         </section>
@@ -131,22 +106,22 @@
     </div>
   </div>
 
-  <!-- Filters + Lightbox JS -->
+  <!-- Filters + Lightbox Script -->
   <script>
     (function(){
       const gallery = document.getElementById('gallery');
-      const items   = Array.from(gallery.querySelectorAll('.tile'));
+      const items = Array.from(gallery.querySelectorAll('.tile'));
       const filters = document.getElementById('filters');
-      const lb      = document.getElementById('lightbox');
-      const lbImg   = document.getElementById('lbImg');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
       const lbCaption = document.getElementById('lbCaption');
       const btnPrev = document.getElementById('lbPrev');
       const btnNext = document.getElementById('lbNext');
-      const btnClose= document.getElementById('lbClose');
-      let visible   = items.slice();
+      const btnClose = document.getElementById('lbClose');
+      let visible = items.slice();
       let idx = 0;
 
-      // --- Filtering ---
+      // Filtering
       function setFilter(tag){
         visible = [];
         items.forEach(el => {
@@ -164,36 +139,31 @@
         setFilter(btn.dataset.filter);
       });
 
-      // --- Lightbox ---
+      // Lightbox
       function open(i){
         if (!visible.length) return;
         idx = (i + visible.length) % visible.length;
         const a = visible[idx];
         lbImg.src = a.getAttribute('href');
         lbImg.alt = a.querySelector('.shot')?.alt || '';
-        const n = idx + 1, total = visible.length;
-        const cap = a.dataset.caption || '';
-        lbCaption.textContent = `${cap}  —  ${n}/${total}`;
+        lbCaption.textContent = `${a.dataset.caption || ''}  —  ${idx+1}/${visible.length}`;
         lb.hidden = false;
         document.body.style.overflow = 'hidden';
-        // preload neighbors
-        const preL = new Image(); preL.src = visible[(idx-1+total)%total].getAttribute('href');
-        const preR = new Image(); preR.src = visible[(idx+1)%total].getAttribute('href');
       }
-      function close(){ lb.hidden = true; document.body.style.overflow = ''; lbImg.src = '' }
-      function prev(){ open(idx-1) }
-      function next(){ open(idx+1) }
+      function close(){ lb.hidden = true; document.body.style.overflow = ''; lbImg.src = ''; }
+      function prev(){ open(idx-1); }
+      function next(){ open(idx+1); }
 
       items.forEach((a, i) => {
-        a.addEventListener('click', e => { e.preventDefault(); open(i) });
+        a.addEventListener('click', e => { e.preventDefault(); open(i); });
         a.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i) }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
         });
       });
       btnPrev.addEventListener('click', prev);
       btnNext.addEventListener('click', next);
       btnClose.addEventListener('click', close);
-      lb.addEventListener('click', e => { if (e.target === lb) close() });
+      lb.addEventListener('click', e => { if (e.target === lb) close(); });
       document.addEventListener('keydown', e => {
         if (lb.hidden) return;
         if (e.key === 'Escape') close();
@@ -201,9 +171,24 @@
         if (e.key === 'ArrowRight') next();
       });
 
-      // default filter
       setFilter('all');
     })();
+  </script>
+
+  <!-- Header Loader -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => { document.getElementById("header").innerHTML = html; })
+      .then(() => {
+        document.addEventListener('click', e => {
+          if (e.target.matches('.nav-toggle')) {
+            e.target.classList.toggle('active');
+            const tabs = document.getElementById('primary-tabs');
+            if (tabs) tabs.classList.toggle('show');
+          }
+        });
+      });
   </script>
 </body>
 </html>
