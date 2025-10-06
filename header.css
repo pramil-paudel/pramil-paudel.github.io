@@ -214,3 +214,56 @@
   }
   .profile::after{ display: none; }    /* no need for the spacer on mobile */
 }
+/* Keep header above page content */
+.site-header {
+  position: sticky;   /* or fixed, if you prefer */
+  top: 0;
+  z-index: 10000;     /* higher than anything in main content */
+}
+
+/* Ensure the banner/nav forms a stacking context above hero */
+.site-header .banner,
+.site-header .nav {
+  position: relative;
+  z-index: 10001;
+}
+
+/* Mobile dropdown needs the highest z-index so it can be clicked */
+@media (max-width: 768px) {
+  .nav { position: relative; }           /* anchor absolute dropdown */
+  .nav-toggle { position: relative; z-index: 10002; }
+
+  .nav .tabs {
+    position: absolute;
+    right: 1rem;
+    top: calc(100% + 0.5rem);
+    display: none;                       /* hidden by default; JS adds .open */
+    flex-direction: column;
+    min-width: 220px;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    background: #111;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    z-index: 10002;                      /* above hero */
+    pointer-events: auto;                /* ensure clicks hit menu */
+  }
+  .nav .tabs.open { display: flex !important; }
+}
+
+/* Make sure header wrapper doesn't clip the dropdown */
+.site-header .header-card,
+.site-header .container,
+.site-header .banner {
+  overflow: visible !important;
+}
+
+/* SAFETY: keep main content below header in the stack */
+.band, .hero, .page-bg, .inner, main, header ~ * {
+  position: relative;
+  z-index: 0;           /* lower than header */
+}
+
+/* If any hero element had a high z-index, neutralize it */
+.hero, .page-bg {
+  z-index: 1;           /* still below header's 10000+ */
+}

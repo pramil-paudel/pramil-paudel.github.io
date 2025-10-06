@@ -188,20 +188,48 @@
   <footer>© 2025 Pramil Paudel</footer>
 
   <!-- Header loader -->
+    <!-- Header loader + menu init -->
   <script>
     fetch("header.html")
       .then(res => res.text())
       .then(html => {
-        document.getElementById("header").innerHTML = html;
-      })
-      .then(() => {
-        // Mobile menu toggle
-        document.addEventListener('click', e => {
-          if (e.target.matches('.nav-toggle')) {
-            e.target.classList.toggle('active');
-            document.getElementById('primary-tabs').classList.toggle('show');
-          }
+        const mount = document.getElementById("header");
+        mount.innerHTML = html;
+
+        // Scope to the inserted header to avoid collisions
+        const header = mount.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const tabs   = header?.querySelector('#primary-tabs');
+
+        if (!toggle || !tabs) return;
+
+        // Ensure ARIA is present
+        toggle.setAttribute('type', 'button');
+        toggle.setAttribute('aria-controls', 'primary-tabs');
+        toggle.setAttribute('aria-expanded', 'false');
+
+        // Use a single class name that your CSS recognizes
+        const openMenu  = () => { tabs.classList.add('open');  toggle.setAttribute('aria-expanded','true');  };
+        const closeMenu = () => { tabs.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = tabs.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
         });
+
+        // Close when clicking outside the header
+        document.addEventListener('click', (e) => {
+          if (!header.contains(e.target)) closeMenu();
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
+        });
+
+        // Close after choosing a link
+        tabs.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
       });
   </script>
 </body>
