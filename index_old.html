@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pramil Paudel</title>
+  <meta name="description" content="Pramil Paudel — privacy-preserving ML, lensless imaging, and software engineering." />
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+<script>
+  document.addEventListener('click', e => {
+  if (e.target.matches('.nav-toggle')) {
+    e.target.setAttribute('aria-expanded',
+      e.target.getAttribute('aria-expanded') === 'true' ? 'false':'true');
+    const tabs = document.getElementById('primary-tabs');
+    if (tabs) tabs.classList.toggle('show');
+  }
+});
+</script>
+
+  <!-- BIO -->
+  <div class="band band--light">
+    <div class="inner">
+      <section id="bio">
+        <div class="card">
+          <h2>Bio</h2>
+          <p>
+            I’m a PhD student in Computer Science at the University of Kansas working at the intersection of
+            privacy-preserving machine learning and computational (lensless) imaging. My recent work explores how to
+            train and deploy robust classifiers and image-to-image models (CNNs, GANs, Transformers) while minimizing
+            exposure of sensitive visual data—e.g., steganographic encodings and defenses that keep signals useful for
+            learning but opaque for humans. I care about methods that are measurable, reproducible, and practical to ship.
+          </p>
+
+          <p>
+            Before graduate school I spent ~5 years in industry as a software engineer and solution architect, building
+            distributed systems with Java/Spring, Spark/Hadoop, Elasticsearch, Docker, and CI/CD on cloud.
+            At KU I collaborate with physics on real-time, data-intensive workloads and have taught/assisted courses in
+            Python, OOP, and Data Structures. I also serve in Nepali student and literature organizations. I’m open to
+            collaborations on trustworthy AI, efficient training, and privacy-constrained imaging or healthcare ML—feel
+            free to reach out.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="band">
+    <div class="inner">
+      <section id="research">
+        <div class="card">
+          <h2>Research</h2>
+          <div class="grid">
+
+            <!-- Privacy & Security -->
+            <div class="item">
+              <div class="title">Privacy & Security in Imaging and Surveillance</div>
+              <div class="meta">Lensless/low-light imaging · Steganography · Robust classification</div>
+              <ul class="clean">
+                <li>Design privacy-preserving pipelines for lensless cameras that keep human-readable content obfuscated while retaining features needed for ML.</li>
+                <li>Develop image-to-image steganographic encodings (e.g., GAN-based) and defenses that protect sensitive visual information in transit and at rest.</li>
+                <li>Adversarially robust classification for degraded/encoded imagery; evaluation under common corruptions and threat models.</li>
+                <li>End-to-end reproducible benchmarks for comparing privacy vs. utility trade-offs.</li>
+              </ul>
+
+              <!-- KU MediaHub video -->
+              <div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-top:1rem;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.15);">
+                <iframe
+                  id="kmsembed-1_xzfbzono"
+                  src="https://mediahub.ku.edu/embed/secure/iframe/entryId/1_xzfbzono/uiConfId/54254972"
+                  class="kmsembed"
+                  title="Seeing Without Revealing — KU MediaHub"
+                  frameborder="0"
+                  allowfullscreen
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allow="autoplay *; fullscreen *; encrypted-media *"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+                </iframe>
+              </div>
+
+              <div class="pills" aria-label="keywords">
+                <span class="pill">Lensless Imaging</span>
+                <span class="pill">GANs</span>
+                <span class="pill">Steganography</span>
+                <span class="pill">Adversarial Robustness</span>
+                <span class="pill">PyTorch</span>
+              </div>
+            </div>
+
+            <!-- High-Energy Physics -->
+            <div class="item">
+              <div class="title">High-Energy Physics Real-Time Data Processing</div>
+              <div class="meta">Streaming ML · Trigger systems · GPU/FPGA acceleration</div>
+              <ul class="clean">
+                <li>Low-latency inference for streaming detector data with trigger-like constraints.</li>
+                <li>Online feature extraction and anomaly detection for rare-event discovery.</li>
+                <li>Scaled data cleaning pipelines (Spark/Hadoop/Elasticsearch) for dimensionality reduction.</li>
+              </ul>
+              <div class="pills">
+                <span class="pill">SVD</span>
+                <span class="pill">FPGA</span>
+                <span class="pill">Dimensionality Reduction</span>
+              </div>
+            </div>
+
+            <!-- LLMs -->
+            <div class="item">
+              <div class="title">Large Language Models: Attacks & Defenses</div>
+              <div class="meta">Prompt injection · Jailbreaks · Data leakage · Model extraction</div>
+              <ul class="clean">
+                <li>Characterize attack surfaces and design guardrails for agentic LLMs.</li>
+                <li>Evaluate membership inference, model inversion, and data leakage risks.</li>
+                <li>Red-teaming workflows and poisoning-resilient evaluation pipelines.</li>
+              </ul>
+              <div class="pills">
+                <span class="pill">Prompt Injection</span>
+                <span class="pill">Jailbreaks</span>
+                <span class="pill">Privacy Audits</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="band band--alt">
+    <div class="inner">
+      <section id="education">
+        <div class="card">
+          <h2>Education</h2>
+          <ul class="clean">
+            <li><strong>PhD in Computer Science</strong>, University of Kansas (2020–Present)</li>
+            <li><strong>BE in Electronics & Communication Engineering</strong>, Tribhuvan University (2011–2014)</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="band band--light">
+    <div class="inner">
+      <section id="experience">
+        <div class="card">
+          <h2>Experience</h2>
+          <p>See the <a href="experience.html">Experience page</a> for full details.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div class="band">
+    <div class="inner">
+      <section id="news">
+        <div class="card">
+          <h2>Recent News</h2>
+          <ul class="clean">
+            <li>2025 — Scheduled talk at AI4EIC</li>
+            <li>2025 — Paper accepted to ICMLA</li>
+            <li>2024 — Paper accepted to IEEE MASS (lensless classification)</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>© 2025 Pramil Paudel</footer>
+
+  <!-- Header loader -->
+    <!-- Header loader + menu init -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(html => {
+        const mount = document.getElementById("header");
+        mount.innerHTML = html;
+
+        // Scope to the inserted header to avoid collisions
+        const header = mount.querySelector('.site-header');
+        const toggle = header?.querySelector('.nav-toggle');
+        const tabs   = header?.querySelector('#primary-tabs');
+
+        if (!toggle || !tabs) return;
+
+        // Ensure ARIA is present
+        toggle.setAttribute('type', 'button');
+        toggle.setAttribute('aria-controls', 'primary-tabs');
+        toggle.setAttribute('aria-expanded', 'false');
+
+        // Use a single class name that your CSS recognizes
+        const openMenu  = () => { tabs.classList.add('open');  toggle.setAttribute('aria-expanded','true');  };
+        const closeMenu = () => { tabs.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
+
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = tabs.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Close when clicking outside the header
+        document.addEventListener('click', (e) => {
+          if (!header.contains(e.target)) closeMenu();
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
+        });
+
+        // Close after choosing a link
+        tabs.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      });
+  </script>
+</body>
+</html>
