@@ -17,7 +17,6 @@
 </head>
 
 <body>
-  <!-- Subtle Tile Background -->
   <div class="page-bg" aria-hidden="true"></div>
 
   <!-- Shared Header -->
@@ -26,39 +25,117 @@
   <!-- Main Content -->
   <div class="wrap">
 
-    <!-- Education Section -->
+    <!-- Degrees -->
     <div class="band">
       <div class="inner">
         <section>
           <div class="card">
             <h2>Degrees</h2>
-            <ul class="clean">
-              <li><strong>PhD in Computer Science</strong>, University of Kansas (2020–Present)</li>
-              <li><strong>BE in Electronics & Communication Engineering</strong>, Tribhuvan University (2011–2014)</li>
-            </ul>
+
+            <!-- PhD -->
+            <div class="item">
+              <div class="title"><strong>PhD in Computer Science</strong></div>
+              <div class="meta">University of Kansas · 2020 – Present</div>
+              <ul class="clean">
+                <li>Focus: Privacy-Preserving Machine Learning, Lensless Imaging, Generative AI</li>
+              </ul>
+
+              <h3 style="color:#0B3D91; margin-top:0.6em;">Graduate Projects</h3>
+              <div class="grid">
+
+                <div class="item">
+                  <div class="title">LiGANS: Lensless Imaging with Generative Adversarial Networks</div>
+                  <ul class="clean">
+                    <li>Developed a GAN-based framework for reconstructing and classifying lensless images.</li>
+                    <li>Integrated Swin Transformers and UNet-style hiding/reveal networks for privacy-preserving steganography.</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">PPLiC: Privacy-Preserving Lensless Image Classification</div>
+                  <ul class="clean">
+                    <li>Designed a classification pipeline operating directly on raw lensless data to ensure data confidentiality.</li>
+                    <li>Explored PSF-based obfuscation techniques for privacy-aware vision systems.</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">RFLiC: Reconstruction-Free Lensless Image Classification</div>
+                  <ul class="clean">
+                    <li>Proposed a CNN-based classifier for raw lensless diffraction patterns without explicit reconstruction.</li>
+                    <li>Improved computational efficiency while preserving accuracy and security.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid #ccc; margin: 1em 0;" />
+
+            <!-- BE -->
+            <div class="item">
+              <div class="title"><strong>BE in Electronics & Communication Engineering</strong></div>
+              <div class="meta">Tribhuvan University · 2011 – 2014</div>
+              <ul class="clean">
+                <li>Focus: Embedded Systems, Robotics, Signal Processing</li>
+              </ul>
+
+              <h3 style="color:#0B3D91; margin-top:0.6em;">Undergraduate Projects</h3>
+              <div class="grid">
+
+                <div class="item">
+                  <div class="title">Digital Time and Temperature Display</div>
+                  <div class="meta">Aug 2014 – Dec 2014</div>
+                  <ul class="clean">
+                    <li>Responsibilities: Programming, circuit design, hardware assembly (Robotics Club, Pashchimanchal Campus).</li>
+                    <li>Achievement: Installed during 26th Anniversary of Pashchimanchal Campus, IOE, TU, Pokhara (Dec 2, 2013).</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">Image Processing Based Intelligence, Surveillance and Control System</div>
+                  <div class="meta">Aug 2014 – Dec 2014</div>
+                  <ul class="clean">
+                    <li>Developed an integrated system combining biometric databases, wireless surveillance, and robot control.</li>
+                    <li>Tech: MATLAB, SQL, Java/XML (Android), C (PIC microcontroller).</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">Microcontroller Based Temperature Sensing Inauguration System</div>
+                  <div class="meta">Jan 2014 – May 2014</div>
+                  <ul class="clean">
+                    <li>Developed temperature-triggered automation system for local inaugurations.</li>
+                    <li>Used in city events: Pokhara Submetropolitan City (Jan 2014), Batulechaur Teej Mela (Aug 2014).</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">IR Remote Controlled Advanced Inauguration System</div>
+                  <div class="meta">Jan 2013 – May 2013</div>
+                  <ul class="clean">
+                    <li>IR-based automation for technical inaugurations at multiple institutions in Pokhara (2013).</li>
+                    <li>Responsibilities: Programming, circuit design, mechanical supervision.</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="title">“Clean Bagmati Green Kathmandu” Themed Automatic & Manual Robots</div>
+                  <div class="meta">Jul 2012 – Dec 2012</div>
+                  <ul class="clean">
+                    <li>Designed autonomous and manual robots promoting environmental awareness.</li>
+                    <li>Awarded 1st Runner-Up & Best Engineering Award, 6th National Robocup Nepal-2069 (Pulchowk Campus, July 3, 2012).</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </section>
       </div>
     </div>
 
-    <!-- Add more sections if needed -->
-    <!--
-    <div class="band band--light">
-      <div class="inner">
-        <section>
-          <div class="card">
-            <h2>Certifications</h2>
-            <ul class="clean">
-              <li>AWS Certified Solutions Architect</li>
-              <li>Advanced ACLS Nursing License</li>
-            </ul>
-          </div>
-        </section>
-      </div>
-    </div>
-    -->
-
-    <!-- Footer -->
     <footer>© 2025 Pramil Paudel</footer>
   </div>
 
@@ -69,39 +146,24 @@
         const mount = document.getElementById("header");
         mount.innerHTML = html;
 
-        // Scope to the inserted header to avoid collisions
         const header = mount.querySelector('.site-header');
         const toggle = header?.querySelector('.nav-toggle');
         const tabs   = header?.querySelector('#primary-tabs');
-
         if (!toggle || !tabs) return;
 
-        // Ensure ARIA is present
         toggle.setAttribute('type', 'button');
         toggle.setAttribute('aria-controls', 'primary-tabs');
         toggle.setAttribute('aria-expanded', 'false');
 
-        // Use a single class name that your CSS recognizes
-        const openMenu  = () => { tabs.classList.add('open');  toggle.setAttribute('aria-expanded','true');  };
         const closeMenu = () => { tabs.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
-
-        toggle.addEventListener('click', (e) => {
+        toggle.addEventListener('click', e => {
           e.stopPropagation();
           const isOpen = tabs.classList.toggle('open');
           toggle.setAttribute('aria-expanded', String(isOpen));
         });
 
-        // Close when clicking outside the header
-        document.addEventListener('click', (e) => {
-          if (!header.contains(e.target)) closeMenu();
-        });
-
-        // Close on Escape
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeMenu();
-        });
-
-        // Close after choosing a link
+        document.addEventListener('click', e => { if (!header.contains(e.target)) closeMenu(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
         tabs.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
       });
   </script>
