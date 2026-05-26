@@ -10,25 +10,25 @@
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;450;500;600;700&family=IBM+Plex+Mono:wght@300;400;450;500;600&display=swap');
 
     :root {
-      --bg: #f7f8fa;
+      --bg: #f4f8f5;
       --paper: #ffffff;
-      --ink: #101827;
-      --muted: #5f6b7a;
-      --subtle: #8b97a6;
-      --line: #d9e1ea;
-      --line-strong: #c3cfdd;
-      --blue: #0b63ce;
-      --blue-dark: #0b3a75;
-      --blue-soft: #eaf3ff;
-      --teal: #087f8c;
-      --teal-soft: #e8f7f8;
-      --green: #087f8c;
-      --green-soft: #e8f7f8;
+      --ink: #0f1720;
+      --muted: #536172;
+      --subtle: #738194;
+      --line: #d3dfd8;
+      --line-strong: #b8ccc1;
+      --blue: #145ec9;
+      --blue-dark: #0b376f;
+      --blue-soft: #e9f2ff;
+      --teal: #0b8a71;
+      --teal-soft: #e9f8f2;
+      --green: #138a63;
+      --green-soft: #eaf8f0;
       --gold: #a15c08;
       --gold-soft: #fff4e5;
       --violet: #6254b8;
       --violet-soft: #f0efff;
-      --light: #f1f4f8;
+      --light: #eef5f1;
       --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       --sans: "IBM Plex Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --radius: 18px;
@@ -49,24 +49,25 @@
       position: relative;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 8% -6%, rgba(11, 99, 206, 0.085), transparent 31%),
-        radial-gradient(circle at 92% 10%, rgba(8, 127, 140, 0.07), transparent 33%),
-        linear-gradient(180deg, #fcfdff 0%, var(--bg) 58%, #f5f7fa 100%);
+        radial-gradient(circle at 8% -6%, rgba(20, 94, 201, 0.09), transparent 31%),
+        radial-gradient(circle at 92% 10%, rgba(11, 138, 113, 0.10), transparent 34%),
+        radial-gradient(circle at 82% 82%, rgba(19, 138, 99, 0.08), transparent 28%),
+        linear-gradient(180deg, #fcfffd 0%, var(--bg) 58%, #eef5f1 100%);
     }
 
     body::before {
       content: "";
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.50;
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.56;
       background-image:
-        linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+        linear-gradient(rgba(19, 138, 99, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 94, 201, 0.04) 1px, transparent 1px),
         radial-gradient(circle, rgba(15, 23, 42, 0.045) 1px, transparent 1.2px);
-      background-size: 48px 48px, 48px 48px, 22px 22px;
+      background-size: 44px 44px, 44px 44px, 22px 22px;
     }
 
     body::after {
       content: "";
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.62;
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.72;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='980' height='680' viewBox='0 0 980 680'%3E%3Cg fill='none' stroke='%232563eb' stroke-width='1.05' stroke-opacity='.16'%3E%3Cpath d='M0 86 H150 C196 86 202 44 246 44 H430 C474 44 486 96 532 96 H980'/%3E%3Cpath d='M0 232 H126 C178 232 186 178 236 178 H432 C482 178 492 238 548 238 H980'/%3E%3Cpath d='M0 430 H190 C238 430 248 372 300 372 H540 C596 372 604 430 660 430 H980'/%3E%3Cpath d='M112 0 V92 C112 132 156 142 156 184 V680'/%3E%3Cpath d='M790 0 V138 C790 182 738 192 738 238 V680'/%3E%3Cpath d='M430 44 V110 C430 148 468 154 468 190 V680'/%3E%3Ccircle cx='246' cy='44' r='4'/%3E%3Ccircle cx='532' cy='96' r='4'/%3E%3Ccircle cx='236' cy='178' r='4'/%3E%3Ccircle cx='548' cy='238' r='4'/%3E%3Ccircle cx='300' cy='372' r='4'/%3E%3Ccircle cx='660' cy='430' r='4'/%3E%3C/g%3E%3Cg fill='%230f766e' fill-opacity='.13'%3E%3Ccircle cx='156' cy='184' r='5'/%3E%3Ccircle cx='738' cy='238' r='5'/%3E%3Ccircle cx='468' cy='190' r='5'/%3E%3C/g%3E%3C/svg%3E"),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%230f766e' stroke-width='1' stroke-opacity='.11'%3E%3Cpath d='M40 112 H150 C182 112 190 72 222 72 H420'/%3E%3Cpath d='M84 238 H200 C232 238 242 288 276 288 H480'/%3E%3Cpath d='M158 0 V138 C158 176 116 184 116 224 V520'/%3E%3Cpath d='M402 0 V208 C402 242 360 252 360 292 V520'/%3E%3Ccircle cx='222' cy='72' r='4'/%3E%3Ccircle cx='276' cy='288' r='4'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: repeat, repeat;
@@ -81,9 +82,10 @@
 
     .topbar {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.90);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(16px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.035);
     }
     .topbar, .page { position: relative; z-index: 1; }
 
@@ -98,8 +100,8 @@
     }
     .brand-dot {
       width: 10px; height: 10px; border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 0 6px rgba(8, 127, 140, 0.11);
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(19, 138, 99, 0.14);
     }
 
     .nav-links {
@@ -137,11 +139,11 @@
     .card > * { position: relative; z-index: 1; }
 
     .hero-main {
-      min-height: 380px; border-color: #c9d6e4;
+      min-height: 380px; border-color: #c5d8cc;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,251,255,0.93)),
-        radial-gradient(circle at 15% 8%, rgba(37,99,235,0.13), transparent 30%),
-        radial-gradient(circle at 94% 84%, rgba(15,118,110,0.11), transparent 32%);
+        linear-gradient(135deg, rgba(255,255,255,0.97), rgba(247,252,249,0.95)),
+        radial-gradient(circle at 15% 8%, rgba(37,99,235,0.12), transparent 30%),
+        radial-gradient(circle at 94% 84%, rgba(19,138,99,0.14), transparent 34%);
     }
     .hero-main::after { display: none; }
 
@@ -171,13 +173,14 @@
 
     .role-chip {
       display: inline-flex; align-items: center; gap: 8px;
-      color: #0b3a75; background: #eaf3ff; border: 1px solid #cfe2ff;
+      color: #0e5d56; background: #ecfaf4; border: 1px solid #bfe6d4;
       border-radius: 999px; padding: 7px 11px;
-      font-size: 0.76rem; font-weight: 500; white-space: nowrap;
+      font-size: 0.76rem; font-weight: 600; white-space: nowrap;
+      box-shadow: 0 6px 14px rgba(19, 138, 99, 0.08);
     }
     .role-chip::before {
       content: ""; width: 8px; height: 8px; border-radius: 50%;
-      background: var(--teal); box-shadow: 0 0 0 5px rgba(15,118,110,0.11);
+      background: var(--green); box-shadow: 0 0 0 5px rgba(19,138,99,0.12);
     }
     .role-path { color: var(--muted); font-size: 0.76rem; }
 
@@ -200,28 +203,62 @@
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
     }
     .btn:hover { transform: translateY(-1px); text-decoration: none; }
-    .btn-primary { color: white; background: #101827; border: 1px solid #101827; }
+    .btn-primary { color: white; background: linear-gradient(135deg, #0d4d75, #117a61); border: 1px solid #117a61; box-shadow: 0 10px 22px rgba(17, 122, 97, 0.18); }
     .btn-secondary { color: var(--ink); background: #fbfcfd; border: 1px solid var(--line-strong); }
-    .btn-secondary:hover { border-color: #a8c7ef; background: #f7fbff; }
+    .btn-secondary:hover { border-color: #a7d6c3; background: #f4fbf7; }
 
-    .hero-side { padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-side {
+      padding: 26px;
+      display: grid;
+      align-content: start;
+      gap: 18px;
+    }
 
-    .profile-mini { display: grid; grid-template-columns: 82px 1fr; gap: 15px; align-items: center; }
+    .profile-mini {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      justify-items: center;
+      text-align: center;
+    }
 
     .avatar {
-      width: 82px; height: 82px; border-radius: 20px;
+      width: 118px; height: 118px; border-radius: 28px;
       display: grid; place-items: center;
       color: white; position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #0f172a, #2563eb);
-      font-size: 1.45rem; font-weight: 600; letter-spacing: -0.05em;
+      background: linear-gradient(135deg, #0f172a, #117a61);
+      font-size: 1.8rem; font-weight: 600; letter-spacing: -0.05em;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
     }
     .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
     .avatar span { position: relative; z-index: 1; }
 
-    .profile-mini h2 { font-size: 1.2rem; line-height: 1.2; font-weight: 600; letter-spacing: -0.025em; }
-    .profile-mini p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin-top: 4px; }
+    .profile-mini h2 { font-size: 1.35rem; line-height: 1.15; font-weight: 650; letter-spacing: -0.035em; }
+    .profile-mini p { color: var(--muted); font-size: 0.91rem; line-height: 1.5; margin-top: 5px; }
 
-    .side-block { border-top: 1px solid var(--line); padding-top: 15px; }
+    .profile-note {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.58;
+      text-align: left;
+      max-width: 100%;
+    }
+    .profile-note div { padding: 0; }
+    .profile-note strong {
+      font-family: var(--mono);
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .profile-note a {
+      color: #0d6e5c;
+      font-weight: 600;
+    }
+
+    .side-block { padding-top: 2px; }
 
     .side-label, .section-label, .group-label {
       font-family: var(--mono); color: var(--subtle);
@@ -253,8 +290,15 @@
       gap: 12px; margin-bottom: 22px;
     }
     .impact-card {
-      padding: 16px; background: rgba(255,255,255,0.94);
+      padding: 16px; background: rgba(255,255,255,0.95);
       border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm);
+      position: relative; overflow: hidden;
+    }
+    .impact-card::before {
+      content: "";
+      position: absolute; left: 0; top: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      opacity: 0.95;
     }
     .impact-card strong {
       display: block; font-size: 1.05rem; line-height: 1.25;
@@ -282,12 +326,12 @@
     .bio-text p + p { margin-top: 14px; }
 
     .focus-panel {
-      background: #fbfcfd; border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fcfffd, #f5fbf8); border: 1px solid var(--line);
       border-radius: 14px; padding: 16px;
     }
     .focus-panel h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 10px; }
     .focus-list { display: grid; gap: 10px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
-    .focus-list div { padding-left: 13px; border-left: 3px solid var(--blue-soft); }
+    .focus-list div { padding-left: 13px; border-left: 3px solid #bde6d4; }
 
     /* ─── Video ─── */
     .video-card { padding: 0; overflow: hidden; }
@@ -334,7 +378,7 @@
     .video-steps { display: grid; gap: 8px; }
     .video-steps div {
       padding: 10px 12px; border-radius: 12px;
-      border: 1px solid #d8e6f5; background: var(--blue-soft);
+      border: 1px solid #d1e7db; background: linear-gradient(90deg, #eef9f3, #f6fbff);
       color: var(--muted); font-size: 0.86rem; line-height: 1.45;
     }
     .video-steps strong { font-family: var(--mono); color: var(--ink); font-weight: 600; letter-spacing: 0.01em; }
@@ -362,6 +406,12 @@
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(17,24,39,0.18));
     }
+   .system-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+}
 
     .visual-lensless {
       background:
@@ -385,20 +435,21 @@
         repeating-linear-gradient(0deg, rgba(16,24,39,0.035), rgba(16,24,39,0.035) 1px, transparent 1px, transparent 16px),
         linear-gradient(135deg, #f7f2ea, #deebf4);
     }
-    .visual-hep {
+    .visual-physics {
       background:
-        radial-gradient(circle at 38% 40%, rgba(98,84,184,0.24), transparent 26%),
-        radial-gradient(circle at 72% 55%, rgba(11,99,206,0.20), transparent 26%),
-        repeating-linear-gradient(45deg, rgba(98,84,184,0.06), rgba(98,84,184,0.06) 1px, transparent 1px, transparent 14px),
-        linear-gradient(135deg, #f0efff, #e4eaf5);
+        radial-gradient(circle at 24% 32%, rgba(19,138,99,0.25), transparent 25%),
+        radial-gradient(circle at 70% 54%, rgba(20,94,201,0.22), transparent 28%),
+        repeating-linear-gradient(45deg, rgba(19,138,99,0.07), rgba(19,138,99,0.07) 1px, transparent 1px, transparent 14px),
+        repeating-linear-gradient(90deg, rgba(15,23,42,0.035), rgba(15,23,42,0.035) 1px, transparent 1px, transparent 18px),
+        linear-gradient(135deg, #eefaf3, #e3edf7);
     }
 
     .system-body { padding: 22px; }
     .system-card.featured .system-body { padding: 30px; }
 
     .system-type {
-      font-family: var(--mono); color: var(--blue-dark);
-      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.12em;
+      font-family: var(--mono); color: #0d6e5c;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; margin-bottom: 9px;
     }
     .system-body h3 { font-size: 1.18rem; line-height: 1.35; font-weight: 600; letter-spacing: -0.02em; }
@@ -446,16 +497,16 @@
       content: "";
       position: absolute; left: 9px; top: 0; bottom: 0;
       width: 1.5px;
-      background: linear-gradient(180deg, var(--blue), var(--line) 70%, transparent);
+      background: linear-gradient(180deg, var(--green), var(--blue), var(--line) 76%, transparent);
     }
     .tl-section .group-label { position: relative; }
     .tl-section .group-label::before {
       content: "";
       position: absolute; left: -32px; top: 50%; transform: translateY(-50%);
       width: 11px; height: 11px; border-radius: 50%;
-      background: var(--blue);
-      border: 2.5px solid var(--blue-soft);
-      box-shadow: 0 0 0 3px rgba(11,99,206,0.12);
+      background: var(--green);
+      border: 2.5px solid var(--green-soft);
+      box-shadow: 0 0 0 3px rgba(19,138,99,0.12);
     }
     .tl-section .output-card,
     .tl-section .experience-item { position: relative; }
@@ -469,7 +520,7 @@
     }
 
     /* ─── Experience ─── */
-    .experience-card { border-left: 5px solid var(--blue); }
+    .experience-card { border-left: 5px solid var(--green); }
     .experience-item {
       display: grid; grid-template-columns: 170px 1fr; gap: 18px;
     }
@@ -497,11 +548,13 @@
       display: grid; grid-template-columns: 76px 1fr; gap: 12px;
       color: var(--muted); font-size: 0.92rem; line-height: 1.55;
     }
-    .news-date { font-family: var(--mono); color: var(--blue); font-weight: 600; letter-spacing: 0.01em; }
+    .news-date { font-family: var(--mono); color: var(--green); font-weight: 700; letter-spacing: 0.01em; }
 
     footer {
       font-family: var(--mono); padding: 24px 0 10px;
       color: var(--muted); text-align: center; font-size: 0.88rem; letter-spacing: 0.01em;
+      border-top: 1px solid rgba(184, 204, 193, 0.45);
+      margin-top: 4px;
     }
 
     /* ─── Responsive ─── */
@@ -585,22 +638,18 @@
           <div>
             <h2>Pramil Paudel</h2>
             <p>PhD Candidate in Computer Science, University of Kansas.</p>
-          </div>
-        </div>
-
-        <div class="side-block compact-focus">
-          <div class="side-label">Current Focus</div>
-          <div class="contact-list">
-            <div><strong>Encoded sensing</strong> — lensless measurements</div>
-            <div><strong>Learning systems</strong> — CNN · GAN · Transformer</div>
-            <div><strong>Risk analysis</strong> — reconstruction leakage</div>
+            <div class="profile-note">
+              <div><strong>Advisor</strong> — <a href="https://ittc.ku.edu/~fli/" target="_blank" rel="noopener">Fengjun Li</a></div>
+              <div>Privacy-preserving machine learning with modern deep learning models and analysis of their behavior.</div>
+              <div>Working at the intersection of lensless imaging, privacy preservation, and computer vision: learning without seeing.</div>
+              <div><strong>T2 Lab</strong> — Research with Daniel Tapia Takaki’s group on novel mathematical models for data processing and CERN data. <a href="https://t2lab.ku.edu/" target="_blank" rel="noopener">Lab</a> · <a href="https://t2lab.ku.edu/people/pramil-paudel" target="_blank" rel="noopener">Profile</a></div>
+            </div>
           </div>
         </div>
 
         <div class="side-block">
-          <div class="side-label">Links</div>
           <div class="contact-list">
-            <div><strong>Email</strong> — <a href="mailto:ppaudel35@gmail.com">ppaudel35@gmail.com</a></div>
+            <div><strong>Email</strong> — <a href="mailto:ppaudel35@gmail.com">pramil [dot] paudel [at] ku.edu</a></div>
             <div><strong>LinkedIn</strong> — <a href="https://www.linkedin.com/in/pramilp" target="_blank" rel="noopener">linkedin.com/in/pramilp</a></div>
             <div><strong>GitHub</strong> — <a href="https://github.com/pramil-paudel" target="_blank" rel="noopener">github.com/pramil-paudel</a></div>
             <div><strong>Location</strong> — Lawrence, Kansas, USA</div>
@@ -612,19 +661,19 @@
     <!-- ═══════════════════ IMPACT GRID ═══════════════════ -->
     <section class="impact-grid" aria-label="Portfolio summary">
       <div class="impact-card">
-        <strong>Research depth</strong>
+        <strong>Research</strong>
         <span>Lensless imaging, encoded representation learning, steganography, and privacy analysis.</span>
       </div>
       <div class="impact-card">
-        <strong>Engineering depth</strong>
+        <strong>Engineering</strong>
         <span>5+ years industry: Java/Spring, Spark/Hadoop, Elasticsearch, Docker, CI/CD on cloud.</span>
       </div>
       <div class="impact-card">
-        <strong>System outputs</strong>
+        <strong>Collaboration</strong>
         <span>Peer-reviewed papers (IEEE MASS, ICMLA), codebases, datasets, and publication artifacts.</span>
       </div>
       <div class="impact-card">
-        <strong>Visual communication</strong>
+        <strong>&amp; More</strong>
         <span>Scientific diagrams, research videos, posters, and technical storytelling.</span>
       </div>
     </section>
@@ -706,93 +755,79 @@
         </div>
 
         <div class="systems-grid">
-          <!-- System 01: Lensless Learning -->
+          <!-- System 01: Direct Sensor Semantic Understanding -->
           <article class="system-card featured">
-            <div class="system-visual visual-lensless"></div>
+            <div class="system-visual">
+            <img src="images/RFLIC_Architect.png"
+                 alt="Reconstruction-free classification from lensless sensor measurements">
+            </div>
             <div class="system-body">
-              <div class="system-type">System 01 · Privacy &amp; Security in Imaging</div>
-              <h3>Direct learning from lensless measurements</h3>
+              <div class="system-type">System 01 · Semantic Understanding Without Seeing</div>
+              <h3>Reconstruction-Free Classification for Lensless Imaging Systems</h3>
               <p>
-                Design privacy-preserving pipelines for lensless cameras that keep human-readable content obfuscated while retaining features needed for ML. Adversarially robust classification for degraded/encoded imagery with evaluation under common corruptions and threat models.
+                Learning semantic information directly from lensless sensor measurements without first reconstructing a human-viewable image.
               </p>
               <div class="fact-grid">
-                <div class="fact"><strong>Question</strong><span>Can models learn semantic information from measurements that are not visually interpretable?</span></div>
-                <div class="fact"><strong>Approach</strong><span>PSF simulation, lensless forward models, block-DCT features, CNN/ResNet classification.</span></div>
-                <div class="fact"><strong>Output</strong><span>Classification experiments, frequency analysis, and privacy-oriented representation evaluation.</span></div>
-                <div class="fact"><strong>Venues</strong><span>IEEE MASS 2024 · ICMLA 2025</span></div>
+                <div class="fact"><strong>Question</strong><span>Can a model understand visual content from direct sensor measurements that humans cannot interpret?</span></div>
+                <div class="fact"><strong>Focus</strong><span>Reconstruction-free classification, sensor-domain learning, and frequency-aware representation analysis.</span></div>
+                <div class="fact"><strong>Venues</strong><span>ICMLA 2025</span></div>
               </div>
               <div class="chip-row">
                 <span class="chip">Lensless Imaging</span>
-                <span class="chip">Classification</span>
-                <span class="chip">Frequency Features</span>
-                <span class="chip">Visual Privacy</span>
-                <span class="chip">Adversarial Robustness</span>
+                <span class="chip">Sensor Measurements</span>
+                <span class="chip">Reconstruction-Free</span>
+                <span class="chip">Semantic Understanding</span>
               </div>
             </div>
           </article>
 
-          <!-- System 02: Steganography -->
+          <!-- System 02: Diffraction Pattern Hiding -->
           <article class="system-card">
             <div class="system-visual visual-hide"></div>
             <div class="system-body">
-              <div class="system-type">System 02 · Representation Hiding</div>
-              <h3>Privacy-preserving image-to-image steganography</h3>
-              <p>
-                Embedding full lensless representations inside natural RGB containers using GAN-based steganographic encodings, where recovery depends on a physics-informed pathway.
-              </p>
-              <div class="fact-grid">
-                <div class="fact"><strong>Focus</strong><span>Container fidelity, hidden representation recovery, and PSF-conditioned restoration.</span></div>
-                <div class="fact"><strong>Tools</strong><span>Hiding networks, reveal networks, generative restoration, steganalysis metrics.</span></div>
-                <div class="fact"><strong>Status</strong><span>Submitted 2024</span></div>
-              </div>
+              <div class="system-type">System 02 · Privacy-Preserving Diffraction Pattern Hiding</div>
+              <h3>Privacy-Preserving Image-to-Image Steganography</h3>
               <div class="chip-row">
-                <span class="chip">Steganography</span>
-                <span class="chip">GANs</span>
-                <span class="chip">PSF-Keyed Recovery</span>
-                <span class="chip">PyTorch</span>
+                <span class="chip">Under Review</span>
               </div>
             </div>
           </article>
 
-          <!-- System 03: Reconstruction privacy -->
+          <!-- System 03: Reconstruction–Semantics Tradeoff -->
           <article class="system-card">
             <div class="system-visual visual-recon"></div>
             <div class="system-body">
-              <div class="system-type">System 03 · Privacy Stress Test</div>
-              <h3>Reconstruction-based privacy analysis</h3>
+              <div class="system-type">System 03 · Reconstruction–Semantic Understanding Tradeoff</div>
+              <h3>Privacy-Preserving Robust Lensless Image Classification</h3>
               <p>
-                Using GANs, Transformers, and physics-guided reconstruction models to evaluate how much visual information can be recovered from encoded measurements.
+                Finding the tradeoff between visual reconstruction risk and semantic understanding in lensless classification systems.
               </p>
               <div class="fact-grid">
-                <div class="fact"><strong>Focus</strong><span>Measure leakage by testing how well adversarial models recover visual content.</span></div>
-                <div class="fact"><strong>Tools</strong><span>GANs, Swin/Transformer models, FNO modules, perceptual and fidelity metrics.</span></div>
+                <div class="fact"><strong>Focus</strong><span>How much semantic utility remains when reconstruction becomes difficult?</span></div>
+                <div class="fact"><strong>Venue</strong><span>IEEE MASS 2024</span></div>
               </div>
               <div class="chip-row">
-                <span class="chip">GANs</span>
-                <span class="chip">Transformers</span>
-                <span class="chip">Privacy Leakage</span>
+                <span class="chip">Robust Classification</span>
+                <span class="chip">Privacy Tradeoff</span>
+                <span class="chip">Lensless Images</span>
               </div>
             </div>
           </article>
 
-          <!-- System 04: HEP -->
+          <!-- System 04: Physics-Informed Diffraction Understanding -->
           <article class="system-card">
-            <div class="system-visual visual-hep"></div>
+            <div class="system-visual visual-physics"></div>
             <div class="system-body">
-              <div class="system-type">System 04 · High-Energy Physics</div>
-              <h3>Real-time anomaly detection using event-by-event SVD</h3>
+              <div class="system-type">System 04 · Physics-Informed Lensless Diffraction Understanding</div>
+              <h3>Physics-Informed Lensless Image Diffraction Understanding</h3>
               <p>
-                Low-latency inference for streaming detector data with trigger-like constraints. Online feature extraction and anomaly detection for rare-event discovery with scaled data cleaning pipelines.
+                Interpreting lensless diffraction measurements using optical forward models, PSF structure, and physics-guided learning.
               </p>
-              <div class="fact-grid">
-                <div class="fact"><strong>Focus</strong><span>Streaming ML, dimensionality reduction, trigger systems, GPU/FPGA acceleration.</span></div>
-                <div class="fact"><strong>Tools</strong><span>SVD, Spark/Hadoop/Elasticsearch pipelines for dimensionality reduction.</span></div>
-              </div>
               <div class="chip-row">
-                <span class="chip">SVD</span>
-                <span class="chip">FPGA</span>
-                <span class="chip">Dimensionality Reduction</span>
-                <span class="chip">Streaming ML</span>
+                <span class="chip">PSF</span>
+                <span class="chip">Diffraction</span>
+                <span class="chip">Physics-Informed ML</span>
+                <span class="chip">Forward Models</span>
               </div>
             </div>
           </article>
