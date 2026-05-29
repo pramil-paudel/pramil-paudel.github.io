@@ -5,583 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pramil Paudel | Research Engineer & PhD Candidate</title>
   <meta name="description" content="Pramil Paudel — PhD candidate and research engineer working on privacy-preserving computer vision, lensless imaging, machine learning systems, steganography, and reconstruction analysis." />
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;450;500;600;700&family=IBM+Plex+Mono:wght@300;400;450;500;600&display=swap');
-
-    :root {
-      --bg: #f4f8f5;
-      --paper: #ffffff;
-      --ink: #0f1720;
-      --muted: #536172;
-      --subtle: #738194;
-      --line: #d3dfd8;
-      --line-strong: #b8ccc1;
-      --blue: #145ec9;
-      --blue-dark: #0b376f;
-      --blue-soft: #e9f2ff;
-      --teal: #0b8a71;
-      --teal-soft: #e9f8f2;
-      --green: #138a63;
-      --green-soft: #eaf8f0;
-      --gold: #a15c08;
-      --gold-soft: #fff4e5;
-      --violet: #6254b8;
-      --violet-soft: #f0efff;
-      --light: #eef5f1;
-      --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      --sans: "IBM Plex Sans", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --radius: 18px;
-      --shadow-sm: 0 12px 34px rgba(16, 24, 39, 0.052);
-      --shadow-md: 0 20px 52px rgba(15, 23, 42, 0.08);
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      min-height: 100vh;
-      font-family: var(--sans);
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.65;
-      position: relative;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 8% -6%, rgba(20, 94, 201, 0.09), transparent 31%),
-        radial-gradient(circle at 92% 10%, rgba(11, 138, 113, 0.10), transparent 34%),
-        radial-gradient(circle at 82% 82%, rgba(19, 138, 99, 0.08), transparent 28%),
-        linear-gradient(180deg, #fcfffd 0%, var(--bg) 58%, #eef5f1 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.56;
-      background-image:
-        linear-gradient(rgba(19, 138, 99, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(20, 94, 201, 0.04) 1px, transparent 1px),
-        radial-gradient(circle, rgba(15, 23, 42, 0.045) 1px, transparent 1.2px);
-      background-size: 44px 44px, 44px 44px, 22px 22px;
-    }
-
-    body::after {
-      content: "";
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.72;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='980' height='680' viewBox='0 0 980 680'%3E%3Cg fill='none' stroke='%232563eb' stroke-width='1.05' stroke-opacity='.16'%3E%3Cpath d='M0 86 H150 C196 86 202 44 246 44 H430 C474 44 486 96 532 96 H980'/%3E%3Cpath d='M0 232 H126 C178 232 186 178 236 178 H432 C482 178 492 238 548 238 H980'/%3E%3Cpath d='M0 430 H190 C238 430 248 372 300 372 H540 C596 372 604 430 660 430 H980'/%3E%3Cpath d='M112 0 V92 C112 132 156 142 156 184 V680'/%3E%3Cpath d='M790 0 V138 C790 182 738 192 738 238 V680'/%3E%3Cpath d='M430 44 V110 C430 148 468 154 468 190 V680'/%3E%3Ccircle cx='246' cy='44' r='4'/%3E%3Ccircle cx='532' cy='96' r='4'/%3E%3Ccircle cx='236' cy='178' r='4'/%3E%3Ccircle cx='548' cy='238' r='4'/%3E%3Ccircle cx='300' cy='372' r='4'/%3E%3Ccircle cx='660' cy='430' r='4'/%3E%3C/g%3E%3Cg fill='%230f766e' fill-opacity='.13'%3E%3Ccircle cx='156' cy='184' r='5'/%3E%3Ccircle cx='738' cy='238' r='5'/%3E%3Ccircle cx='468' cy='190' r='5'/%3E%3C/g%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%230f766e' stroke-width='1' stroke-opacity='.11'%3E%3Cpath d='M40 112 H150 C182 112 190 72 222 72 H420'/%3E%3Cpath d='M84 238 H200 C232 238 242 288 276 288 H480'/%3E%3Cpath d='M158 0 V138 C158 176 116 184 116 224 V520'/%3E%3Cpath d='M402 0 V208 C402 242 360 252 360 292 V520'/%3E%3Ccircle cx='222' cy='72' r='4'/%3E%3Ccircle cx='276' cy='288' r='4'/%3E%3C/g%3E%3C/svg%3E");
-      background-repeat: repeat, repeat;
-      background-size: 980px 680px, 520px 520px;
-      background-position: -120px 40px, 80% 160px;
-    }
-
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: min(var(--max), calc(100% - 38px)); margin: 0 auto; }
-
-    .topbar {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 255, 255, 0.90);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.035);
-    }
-    .topbar, .page { position: relative; z-index: 1; }
-
-    .nav {
-      min-height: 66px;
-      display: flex; justify-content: space-between; align-items: center; gap: 20px;
-    }
-
-    .brand {
-      display: inline-flex; align-items: center; gap: 11px;
-      color: var(--ink); font-weight: 600; letter-spacing: -0.015em;
-    }
-    .brand-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 6px rgba(19, 138, 99, 0.14);
-    }
-
-    .nav-links {
-      display: flex; gap: 18px; align-items: center;
-      font-family: var(--mono); font-size: 0.9rem; color: var(--muted); letter-spacing: 0.01em;
-    }
-    .nav-links a { color: var(--muted); }
-    .nav-links a:hover { color: var(--ink); text-decoration: none; }
-
-    .page { padding: 34px 0 66px; }
-
-    /* ─── Hero ─── */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 335px;
-      gap: 22px; align-items: stretch; margin-bottom: 22px;
-    }
-
-    .hero-main, .hero-side, .card {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid #d7e0ea;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      position: relative; overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute; right: -90px; top: -90px;
-      width: 260px; height: 200px;
-      pointer-events: none; opacity: 0.18; z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220' viewBox='0 0 320 220'%3E%3Cg fill='none' stroke='%232563eb' stroke-width='1' stroke-opacity='.7'%3E%3Cpath d='M0 52 H70 C96 52 102 22 128 22 H250'/%3E%3Cpath d='M20 138 H96 C122 138 128 102 154 102 H320'/%3E%3Cpath d='M92 0 V70 C92 96 122 102 122 128 V220'/%3E%3Ccircle cx='128' cy='22' r='3'/%3E%3Ccircle cx='154' cy='102' r='3'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: contain; background-repeat: no-repeat;
-    }
-    .card > * { position: relative; z-index: 1; }
-
-    .hero-main {
-      min-height: 380px; border-color: #c5d8cc;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.97), rgba(247,252,249,0.95)),
-        radial-gradient(circle at 15% 8%, rgba(37,99,235,0.12), transparent 30%),
-        radial-gradient(circle at 94% 84%, rgba(19,138,99,0.14), transparent 34%);
-    }
-    .hero-main::after { display: none; }
-
-    .hero-visual-lines {
-      position: absolute; inset: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='940' height='440' viewBox='0 0 940 440'%3E%3Cg fill='none' stroke='%230f172a' stroke-width='1' stroke-opacity='.095'%3E%3Cpath d='M78 82 H256 C304 82 310 42 360 42 H592 C640 42 654 96 704 96 H900'/%3E%3Cpath d='M44 196 H190 C242 196 250 150 302 150 H510 C560 150 572 210 626 210 H910'/%3E%3Cpath d='M72 320 H318 C366 320 376 266 428 266 H638 C692 266 704 322 760 322 H900'/%3E%3Cpath d='M170 18 V106 C170 146 214 154 214 196 V420'/%3E%3Cpath d='M800 18 V132 C800 174 748 184 748 228 V420'/%3E%3C/g%3E%3Cg fill='%232563eb' fill-opacity='.18'%3E%3Ccircle cx='360' cy='42' r='4'/%3E%3Ccircle cx='704' cy='96' r='4'/%3E%3Ccircle cx='302' cy='150' r='4'/%3E%3Ccircle cx='626' cy='210' r='4'/%3E%3Ccircle cx='428' cy='266' r='4'/%3E%3Ccircle cx='760' cy='322' r='4'/%3E%3C/g%3E%3C/svg%3E"),
-        linear-gradient(rgba(37,99,235,0.032) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37,99,235,0.032) 1px, transparent 1px);
-      background-repeat: no-repeat, repeat, repeat;
-      background-position: center right, 0 0, 0 0;
-      background-size: 940px 440px, 36px 36px, 36px 36px;
-      opacity: 0.95;
-      mask-image: radial-gradient(circle at 74% 46%, black, rgba(0,0,0,0.65) 44%, transparent 86%);
-    }
-
-    .hero-content {
-      position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr;
-      min-height: 380px; max-width: 840px;
-      padding: 36px; align-content: center;
-    }
-
-    .hero-meta {
-      display: flex; flex-wrap: wrap; gap: 9px; align-items: center;
-      margin-bottom: 22px; font-family: var(--mono);
-    }
-
-    .role-chip {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: #0e5d56; background: #ecfaf4; border: 1px solid #bfe6d4;
-      border-radius: 999px; padding: 7px 11px;
-      font-size: 0.76rem; font-weight: 600; white-space: nowrap;
-      box-shadow: 0 6px 14px rgba(19, 138, 99, 0.08);
-    }
-    .role-chip::before {
-      content: ""; width: 8px; height: 8px; border-radius: 50%;
-      background: var(--green); box-shadow: 0 0 0 5px rgba(19,138,99,0.12);
-    }
-    .role-path { color: var(--muted); font-size: 0.76rem; }
-
-    h1 {
-      font-family: var(--mono); font-weight: 450;
-      max-width: 760px;
-      font-size: clamp(2.35rem, 4.8vw, 4.05rem);
-      line-height: 1.03; letter-spacing: -0.058em;
-      margin-bottom: 15px;
-    }
-
-    .hero-copy { max-width: 700px; color: var(--muted); font-size: 1rem; line-height: 1.72; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-
-    .btn {
-      display: inline-flex; min-height: 42px; align-items: center; justify-content: center;
-      padding: 0 14px; border-radius: 999px;
-      font-family: var(--mono); font-size: 0.88rem; font-weight: 550; letter-spacing: 0.01em;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-    .btn:hover { transform: translateY(-1px); text-decoration: none; }
-    .btn-primary { color: white; background: linear-gradient(135deg, #0d4d75, #117a61); border: 1px solid #117a61; box-shadow: 0 10px 22px rgba(17, 122, 97, 0.18); }
-    .btn-secondary { color: var(--ink); background: #fbfcfd; border: 1px solid var(--line-strong); }
-    .btn-secondary:hover { border-color: #a7d6c3; background: #f4fbf7; }
-
-    .hero-side {
-      padding: 26px;
-      display: grid;
-      align-content: start;
-      gap: 18px;
-    }
-
-    .profile-mini {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      justify-items: center;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 118px; height: 118px; border-radius: 28px;
-      display: grid; place-items: center;
-      color: white; position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #0f172a, #117a61);
-      font-size: 1.8rem; font-weight: 600; letter-spacing: -0.05em;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
-    }
-    .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
-    .avatar span { position: relative; z-index: 1; }
-
-    .profile-mini h2 { font-size: 1.35rem; line-height: 1.15; font-weight: 650; letter-spacing: -0.035em; }
-    .profile-mini p { color: var(--muted); font-size: 0.91rem; line-height: 1.5; margin-top: 5px; }
-
-    .profile-note {
-      margin-top: 14px;
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.58;
-      text-align: left;
-      max-width: 100%;
-    }
-    .profile-note div { padding: 0; }
-    .profile-note strong {
-      font-family: var(--mono);
-      color: var(--ink);
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    .profile-note a {
-      color: #0d6e5c;
-      font-weight: 600;
-    }
-
-    .side-block { padding-top: 2px; }
-
-    .side-label, .section-label, .group-label {
-      font-family: var(--mono); color: var(--subtle);
-      font-size: 0.74rem; font-weight: 600; letter-spacing: 0.13em;
-      text-transform: uppercase; margin-bottom: 10px;
-    }
-
-    .contact-list { display: grid; gap: 8px; font-size: 0.89rem; color: var(--muted); }
-    .contact-list strong { font-family: var(--mono); color: var(--ink); font-weight: 550; letter-spacing: 0.01em; }
-
-    .compact-focus .contact-list div { padding: 8px 0; border-bottom: 1px solid #eef2f7; }
-    .compact-focus .contact-list div:last-child { border-bottom: 0; }
-
-    .tag-row, .chip-row { display: flex; flex-wrap: wrap; gap: 7px; }
-
-    .tag, .chip, .status, .date {
-      font-family: var(--mono);
-      padding: 5px 8px; border-radius: 999px;
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.01em;
-      background: #f8fafc; border: 1px solid #d7e0ea; color: #334155;
-    }
-    .chip-row .chip:first-child, .tag-row .tag:first-child {
-      background: var(--blue-soft); border-color: #cfe3ff; color: var(--blue-dark);
-    }
-
-    /* ─── Impact grid ─── */
-    .impact-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 12px; margin-bottom: 22px;
-    }
-    .impact-card {
-      padding: 16px; background: rgba(255,255,255,0.95);
-      border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-sm);
-      position: relative; overflow: hidden;
-    }
-    .impact-card::before {
-      content: "";
-      position: absolute; left: 0; top: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--blue), var(--green));
-      opacity: 0.95;
-    }
-    .impact-card strong {
-      display: block; font-size: 1.05rem; line-height: 1.25;
-      font-weight: 600; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 6px;
-    }
-    .impact-card span { display: block; color: var(--muted); font-size: 0.83rem; line-height: 1.5; }
-
-    /* ─── Stack / Cards ─── */
-    .stack { display: grid; gap: 22px; }
-    .card { padding: 26px; }
-
-    .section-head {
-      display: grid; grid-template-columns: 1fr; gap: 6px; align-items: start;
-      padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 20px;
-    }
-    .section-head h2 {
-      font-family: var(--mono); font-size: 1.45rem; line-height: 1.2;
-      font-weight: 500; letter-spacing: -0.035em;
-    }
-    .section-head p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 790px; display: none; }
-
-    /* ─── Bio ─── */
-    .bio-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
-    .bio-text { color: var(--muted); font-size: 1rem; line-height: 1.85; }
-    .bio-text p + p { margin-top: 14px; }
-
-    .focus-panel {
-      background: linear-gradient(180deg, #fcfffd, #f5fbf8); border: 1px solid var(--line);
-      border-radius: 14px; padding: 16px;
-    }
-    .focus-panel h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 10px; }
-    .focus-list { display: grid; gap: 10px; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
-    .focus-list div { padding-left: 13px; border-left: 3px solid #bde6d4; }
-
-    /* ─── Video ─── */
-    .video-card { padding: 0; overflow: hidden; }
-    .video-head {
-      display: grid; grid-template-columns: 1fr; gap: 6px; padding: 26px;
-      border-bottom: 1px solid var(--line);
-    }
-    .video-head h2 {
-      font-family: var(--mono); font-size: 1.45rem; line-height: 1.2;
-      font-weight: 500; letter-spacing: -0.035em;
-    }
-    .video-head p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-width: 760px; }
-
-    .video-layout { display: grid; grid-template-columns: 1.28fr 0.72fr; min-height: 420px; }
-
-    .video-frame {
-      position: relative; min-height: 420px;
-      background:
-        linear-gradient(135deg, rgba(11,99,206,0.11), rgba(8,127,140,0.10)),
-        radial-gradient(circle at 24% 24%, rgba(11,99,206,0.24), transparent 24%),
-        radial-gradient(circle at 72% 65%, rgba(161,92,8,0.15), transparent 28%),
-        linear-gradient(180deg, #eef4fa, #e1eaf2);
-      border-right: 1px solid var(--line);
-      display: grid; place-items: center;
-    }
-    .video-frame::before {
-      content: ""; position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(11,99,206,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(11,99,206,0.07) 1px, transparent 1px),
-        radial-gradient(circle, rgba(16,24,39,0.075) 1px, transparent 1px);
-      background-size: 32px 32px, 32px 32px, 18px 18px;
-      opacity: 0.52;
-    }
-    .video-frame iframe {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      border: 0; object-fit: cover; z-index: 2;
-    }
-
-    .video-info { padding: 28px; display: grid; align-content: center; gap: 15px; background: #fbfcfd; }
-    .video-info h3 { font-size: 1.55rem; line-height: 1.16; letter-spacing: -0.035em; font-weight: 600; }
-    .video-info p { color: var(--muted); font-size: 0.96rem; line-height: 1.75; }
-
-    .video-steps { display: grid; gap: 8px; }
-    .video-steps div {
-      padding: 10px 12px; border-radius: 12px;
-      border: 1px solid #d1e7db; background: linear-gradient(90deg, #eef9f3, #f6fbff);
-      color: var(--muted); font-size: 0.86rem; line-height: 1.45;
-    }
-    .video-steps strong { font-family: var(--mono); color: var(--ink); font-weight: 600; letter-spacing: 0.01em; }
-
-    /* ─── Systems ─── */
-    .systems-grid {
-      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px; align-items: stretch;
-    }
-
-    .system-card {
-      overflow: hidden; border: 1px solid var(--line); border-radius: 17px;
-      background: rgba(255,255,255,0.96); box-shadow: var(--shadow-sm);
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-    }
-    .system-card:hover { transform: translateY(-3px); border-color: var(--line-strong); box-shadow: var(--shadow-md); }
-    .system-card.featured { display: block; min-height: auto; }
-
-    .system-visual {
-      position: relative; width: 100%; height: 220px;
-      border-bottom: 1px solid var(--line); overflow: hidden;
-    }
-    .system-card.featured .system-visual { height: 220px; }
-    .system-visual::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(17,24,39,0.18));
-    }
-   .system-visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-}
-
-    .visual-lensless {
-      background:
-        radial-gradient(circle at 18% 30%, rgba(11,99,206,0.28), transparent 25%),
-        radial-gradient(circle at 74% 44%, rgba(8,127,140,0.24), transparent 26%),
-        repeating-linear-gradient(90deg, rgba(11,99,206,0.07), rgba(11,99,206,0.07) 1px, transparent 1px, transparent 18px),
-        linear-gradient(135deg, #eef6ff, #dceaf7);
-    }
-    .visual-hide {
-      background:
-        linear-gradient(45deg, rgba(11,99,206,0.16) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(8,127,140,0.16) 25%, transparent 25%),
-        radial-gradient(circle at 76% 28%, rgba(161,92,8,0.16), transparent 26%),
-        linear-gradient(135deg, #f5f8fb, #deecf1);
-      background-size: 24px 24px, 24px 24px, auto, cover;
-    }
-    .visual-recon {
-      background:
-        radial-gradient(circle at 28% 30%, rgba(161,92,8,0.23), transparent 24%),
-        radial-gradient(circle at 68% 62%, rgba(11,99,206,0.24), transparent 26%),
-        repeating-linear-gradient(0deg, rgba(16,24,39,0.035), rgba(16,24,39,0.035) 1px, transparent 1px, transparent 16px),
-        linear-gradient(135deg, #f7f2ea, #deebf4);
-    }
-    .visual-physics {
-      background:
-        radial-gradient(circle at 24% 32%, rgba(19,138,99,0.25), transparent 25%),
-        radial-gradient(circle at 70% 54%, rgba(20,94,201,0.22), transparent 28%),
-        repeating-linear-gradient(45deg, rgba(19,138,99,0.07), rgba(19,138,99,0.07) 1px, transparent 1px, transparent 14px),
-        repeating-linear-gradient(90deg, rgba(15,23,42,0.035), rgba(15,23,42,0.035) 1px, transparent 1px, transparent 18px),
-        linear-gradient(135deg, #eefaf3, #e3edf7);
-    }
-
-    .system-body { padding: 22px; }
-    .system-card.featured .system-body { padding: 30px; }
-
-    .system-type {
-      font-family: var(--mono); color: #0d6e5c;
-      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; margin-bottom: 9px;
-    }
-    .system-body h3 { font-size: 1.18rem; line-height: 1.35; font-weight: 600; letter-spacing: -0.02em; }
-    .system-card.featured .system-body h3 { font-size: 1.42rem; max-width: 760px; }
-    .system-body p { margin-top: 10px; color: var(--muted); font-size: 0.94rem; line-height: 1.7; }
-
-    .fact-grid { display: grid; gap: 8px; margin-top: 14px; }
-    .fact {
-      display: grid; grid-template-columns: 96px 1fr; gap: 10px;
-      font-size: 0.85rem; line-height: 1.48; color: var(--muted);
-    }
-    .fact strong { font-family: var(--mono); color: var(--ink); font-weight: 600; letter-spacing: 0.01em; }
-
-    /* ─── Outputs with timeline dot+line ─── */
-    .output-grid, .experience-list, .timeline-list, .talk-list, .award-list { display: grid; gap: 14px; }
-    .group-label { font-family: var(--mono); margin: 20px 0 10px; letter-spacing: 0.01em; }
-    .group-label:first-child { margin-top: 0; }
-
-    .output-card, .experience-item, .skill-card, .talk-item, .award-item, .timeline-item {
-      padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfd;
-    }
-
-    .output-top, .timeline-top {
-      display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; margin-bottom: 8px;
-    }
-    .output-card h3, .experience-item h3, .skill-card h3, .talk-item h3, .award-item h3, .timeline-item h3 {
-      font-size: 1rem; line-height: 1.45; font-weight: 600; letter-spacing: -0.01em;
-    }
-    .output-card p, .experience-item p, .skill-card p, .talk-item p, .award-item p, .timeline-item p {
-      color: var(--muted); font-size: 0.92rem; line-height: 1.65;
-    }
-
-    .status, .date {
-      flex: 0 0 auto; padding: 4px 8px; border-radius: 999px; white-space: nowrap;
-    }
-
-    .link-row {
-      display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;
-      font-size: 0.86rem; font-weight: 500;
-    }
-
-    /* ─── Timeline connector (dot + vertical line) ─── */
-    .tl-section { position: relative; padding-left: 32px; }
-    .tl-section::before {
-      content: "";
-      position: absolute; left: 9px; top: 0; bottom: 0;
-      width: 1.5px;
-      background: linear-gradient(180deg, var(--green), var(--blue), var(--line) 76%, transparent);
-    }
-    .tl-section .group-label { position: relative; }
-    .tl-section .group-label::before {
-      content: "";
-      position: absolute; left: -32px; top: 50%; transform: translateY(-50%);
-      width: 11px; height: 11px; border-radius: 50%;
-      background: var(--green);
-      border: 2.5px solid var(--green-soft);
-      box-shadow: 0 0 0 3px rgba(19,138,99,0.12);
-    }
-    .tl-section .output-card,
-    .tl-section .experience-item { position: relative; }
-    .tl-section .output-card::before,
-    .tl-section .experience-item::before {
-      content: "";
-      position: absolute; left: -27px; top: 20px;
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--line-strong);
-      border: 2px solid #f0f4f8;
-    }
-
-    /* ─── Experience ─── */
-    .experience-card { border-left: 5px solid var(--green); }
-    .experience-item {
-      display: grid; grid-template-columns: 170px 1fr; gap: 18px;
-    }
-    .experience-item.industry {
-      border-left: 4px solid var(--green);
-      background: linear-gradient(90deg, var(--green-soft), #fbfcfd 35%);
-    }
-    .experience-item.research {
-      border-left: 4px solid var(--blue);
-      background: linear-gradient(90deg, var(--blue-soft), #fbfcfd 35%);
-    }
-    .experience-date {
-      font-family: var(--mono); color: var(--blue); font-size: 0.86rem; font-weight: 600; letter-spacing: 0.01em;
-    }
-    .experience-item.industry .experience-date { color: var(--green); }
-    .experience-org { color: var(--muted); font-size: 0.9rem; margin: 4px 0 8px; }
-
-    /* ─── Two col / Skills ─── */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-
-    /* ─── News ─── */
-    .news-list { display: grid; gap: 12px; }
-    .news-item {
-      display: grid; grid-template-columns: 76px 1fr; gap: 12px;
-      color: var(--muted); font-size: 0.92rem; line-height: 1.55;
-    }
-    .news-date { font-family: var(--mono); color: var(--green); font-weight: 700; letter-spacing: 0.01em; }
-
-    footer {
-      font-family: var(--mono); padding: 24px 0 10px;
-      color: var(--muted); text-align: center; font-size: 0.88rem; letter-spacing: 0.01em;
-      border-top: 1px solid rgba(184, 204, 193, 0.45);
-      margin-top: 4px;
-    }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 980px) {
-      .hero, .impact-grid, .section-head, .video-head, .video-layout,
-      .systems-grid, .bio-grid, .two-col, .skill-grid,
-      .experience-item { grid-template-columns: 1fr; }
-      .video-frame { border-right: 0; border-bottom: 1px solid var(--line); }
-      .system-card.featured .system-visual, .system-visual { height: 180px; }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(100% - 26px, var(--max)); }
-      .nav { align-items: flex-start; padding: 14px 0; flex-direction: column; }
-      .nav-links { flex-wrap: wrap; gap: 13px; }
-      .hero-content, .card, .video-head, .video-info { padding: 20px; }
-      h1 { font-size: 2.38rem; }
-      .profile-mini { grid-template-columns: 1fr; }
-      .output-top, .timeline-top { flex-direction: column; }
-      .fact, .news-item { grid-template-columns: 1fr; gap: 2px; }
-      .tl-section { padding-left: 24px; }
-      .tl-section::before { left: 6px; }
-      .tl-section .group-label::before { left: -24px; width: 9px; height: 9px; }
-      .tl-section .output-card::before,
-      .tl-section .experience-item::before { left: -20px; }
-    }
-  </style>
+  <link rel="stylesheet" href="new_style.css">
 </head>
 
 <body>
@@ -589,7 +13,6 @@
     <div class="container nav">
       <a class="brand" href="#top"><span class="brand-dot"></span>Pramil Paudel</a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#bio">Bio</a>
         <a href="#highlight">Highlight</a>
         <a href="#systems">Systems</a>
         <a href="#outputs">Outputs</a>
@@ -602,6 +25,7 @@
   </header>
 
   <main id="top" class="container page">
+
     <!-- ═══════════════════ HERO ═══════════════════ -->
     <section class="hero">
       <div class="hero-main">
@@ -612,12 +36,10 @@
               <span class="role-chip">Research Engineer · PhD Candidate</span>
               <span class="role-path">privacy-preserving vision / lensless imaging / ML systems</span>
             </div>
-
             <h1>Machine learning for visual data that should not be directly seen.</h1>
             <p class="hero-copy">
               I build ML systems for encoded visual measurements—combining computational imaging, deep learning, and engineering pipelines to study utility, privacy, and reconstruction risk. Before graduate school I spent ~5 years in industry as a software engineer and solution architect, building distributed systems with Java/Spring, Spark/Hadoop, Elasticsearch, Docker, and CI/CD on cloud.
             </p>
-
             <div class="hero-actions">
               <a class="btn btn-primary" href="#systems">View Research Systems</a>
               <a class="btn btn-secondary" href="#outputs">Research Outputs</a>
@@ -631,7 +53,6 @@
       <aside class="hero-side">
         <div class="profile-mini">
           <div class="avatar">
-            <!-- Drop your headshot at images/pramil.jpg (or images/profile.jpg) -->
             <img src="images/pramil.jpg" alt="Pramil Paudel" onerror="this.onerror=null;this.src='images/profile.jpg';" />
             <span>PP</span>
           </div>
@@ -642,11 +63,10 @@
               <div><strong>Advisor</strong> — <a href="https://ittc.ku.edu/~fli/" target="_blank" rel="noopener">Fengjun Li</a></div>
               <div>Privacy-preserving machine learning with modern deep learning models and analysis of their behavior.</div>
               <div>Working at the intersection of lensless imaging, privacy preservation, and computer vision: learning without seeing.</div>
-              <div><strong>T2 Lab</strong> — Research with Daniel Tapia Takaki’s group on novel mathematical models for data processing and CERN data. <a href="https://t2lab.ku.edu/" target="_blank" rel="noopener">Lab</a> · <a href="https://t2lab.ku.edu/people/pramil-paudel" target="_blank" rel="noopener">Profile</a></div>
+              <div><strong>T2 Lab</strong> — Research with Daniel Tapia Takaki's group on novel mathematical models for data processing and CERN data. <a href="https://t2lab.ku.edu/" target="_blank" rel="noopener">Lab</a> · <a href="https://t2lab.ku.edu/people/pramil-paudel" target="_blank" rel="noopener">Profile</a></div>
             </div>
           </div>
         </div>
-
         <div class="side-block">
           <div class="contact-list">
             <div><strong>Email</strong> — <a href="mailto:ppaudel35@gmail.com">pramil [dot] paudel [at] ku.edu</a></div>
@@ -679,36 +99,6 @@
     </section>
 
     <div class="stack">
-      <!-- ═══════════════════ BIO ═══════════════════ -->
-      <section id="bio" class="card">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Bio</div>
-            <h2>Researcher, engineer, and visual systems builder.</h2>
-          </div>
-        </div>
-
-        <div class="bio-grid">
-          <div class="bio-text">
-            <p>
-              I'm a PhD student in Computer Science at the University of Kansas working at the intersection of privacy-preserving machine learning and computational (lensless) imaging. My recent work explores how to train and deploy robust classifiers and image-to-image models (CNNs, GANs, Transformers) while minimizing exposure of sensitive visual data—e.g., steganographic encodings and defenses that keep signals useful for learning but opaque for humans. I care about methods that are measurable, reproducible, and practical to ship.
-            </p>
-            <p>
-              Before graduate school I spent ~5 years in industry as a software engineer and solution architect, building distributed systems with Java/Spring, Spark/Hadoop, Elasticsearch, Docker, and CI/CD on cloud. At KU I collaborate with physics on real-time, data-intensive workloads and have taught/assisted courses in Python, OOP, and Data Structures. I also serve in Nepali student and literature organizations. I'm open to collaborations on trustworthy AI, efficient training, and privacy-constrained imaging or healthcare ML.
-            </p>
-          </div>
-
-          <aside class="focus-panel">
-            <h3>Current technical focus</h3>
-            <div class="focus-list">
-              <div>Learning directly from lensless measurements without RGB reconstruction.</div>
-              <div>Hiding full lensless representations inside natural image containers.</div>
-              <div>Testing privacy boundaries using GAN/Transformer reconstruction attacks.</div>
-              <div>Building reproducible pipelines for imaging, training, metrics, and visualization.</div>
-            </div>
-          </aside>
-        </div>
-      </section>
 
       <!-- ═══════════════════ RESEARCH HIGHLIGHT VIDEO ═══════════════════ -->
       <section id="highlight" class="card video-card">
@@ -718,7 +108,6 @@
             <h2>Seeing Without Revealing</h2>
           </div>
         </div>
-
         <div class="video-layout">
           <div class="video-frame">
             <iframe
@@ -731,7 +120,6 @@
               sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation">
             </iframe>
           </div>
-
           <div class="video-info">
             <h3>From scene to encoded measurement to privacy analysis.</h3>
             <p>A research overview of the full lensless privacy pipeline.</p>
@@ -753,20 +141,15 @@
             <h2>Research systems.</h2>
           </div>
         </div>
-
         <div class="systems-grid">
-          <!-- System 01: Direct Sensor Semantic Understanding -->
           <article class="system-card featured">
             <div class="system-visual">
-            <img src="images/RFLIC_Architect.png"
-                 alt="Reconstruction-free classification from lensless sensor measurements">
+              <img src="images/RFLIC_Architect.png" alt="Reconstruction-free classification from lensless sensor measurements">
             </div>
             <div class="system-body">
               <div class="system-type">System 01 · Semantic Understanding Without Seeing</div>
               <h3>Reconstruction-Free Classification for Lensless Imaging Systems</h3>
-              <p>
-                Learning semantic information directly from lensless sensor measurements without first reconstructing a human-viewable image.
-              </p>
+              <p>Learning semantic information directly from lensless sensor measurements without first reconstructing a human-viewable image.</p>
               <div class="fact-grid">
                 <div class="fact"><strong>Question</strong><span>Can a model understand visual content from direct sensor measurements that humans cannot interpret?</span></div>
                 <div class="fact"><strong>Focus</strong><span>Reconstruction-free classification, sensor-domain learning, and frequency-aware representation analysis.</span></div>
@@ -781,27 +164,21 @@
             </div>
           </article>
 
-          <!-- System 02: Diffraction Pattern Hiding -->
           <article class="system-card">
             <div class="system-visual visual-hide"></div>
             <div class="system-body">
               <div class="system-type">System 02 · Privacy-Preserving Diffraction Pattern Hiding</div>
               <h3>Privacy-Preserving Image-to-Image Steganography</h3>
-              <div class="chip-row">
-                <span class="chip">Under Review</span>
-              </div>
+              <div class="chip-row"><span class="chip">Under Review</span></div>
             </div>
           </article>
 
-          <!-- System 03: Reconstruction–Semantics Tradeoff -->
           <article class="system-card">
             <div class="system-visual visual-recon"></div>
             <div class="system-body">
               <div class="system-type">System 03 · Reconstruction–Semantic Understanding Tradeoff</div>
               <h3>Privacy-Preserving Robust Lensless Image Classification</h3>
-              <p>
-                Finding the tradeoff between visual reconstruction risk and semantic understanding in lensless classification systems.
-              </p>
+              <p>Finding the tradeoff between visual reconstruction risk and semantic understanding in lensless classification systems.</p>
               <div class="fact-grid">
                 <div class="fact"><strong>Focus</strong><span>How much semantic utility remains when reconstruction becomes difficult?</span></div>
                 <div class="fact"><strong>Venue</strong><span>IEEE MASS 2024</span></div>
@@ -814,15 +191,12 @@
             </div>
           </article>
 
-          <!-- System 04: Physics-Informed Diffraction Understanding -->
           <article class="system-card">
             <div class="system-visual visual-physics"></div>
             <div class="system-body">
               <div class="system-type">System 04 · Physics-Informed Lensless Diffraction Understanding</div>
               <h3>Physics-Informed Lensless Image Diffraction Understanding</h3>
-              <p>
-                Interpreting lensless diffraction measurements using optical forward models, PSF structure, and physics-guided learning.
-              </p>
+              <p>Interpreting lensless diffraction measurements using optical forward models, PSF structure, and physics-guided learning.</p>
               <div class="chip-row">
                 <span class="chip">PSF</span>
                 <span class="chip">Diffraction</span>
@@ -842,68 +216,75 @@
             <h2>Papers · Book · Code</h2>
           </div>
         </div>
+        <div class="outputs-grid">
 
-        <div class="tl-section">
-          <div class="group-label">Peer-reviewed</div>
-          <div class="output-grid">
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Robust Privacy-Preserving Classification for Lensless Images</h3>
-                <span class="status">IEEE MASS 2024</span>
-              </div>
-              <p>Sumit Bhattarai, <strong>Pramil Paudel</strong>, Zhu Li, Bo Luo, Fengjun Li</p>
-            </article>
+          <article class="output-card output-peer">
+            <div class="output-top">
+              <h3>Robust Privacy-Preserving Classification for Lensless Images</h3>
+              <span class="status">IEEE MASS 2024</span>
+            </div>
+            <p>Sumit Bhattarai, <strong>Pramil Paudel</strong>, Zhu Li, Bo Luo, Fengjun Li</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Peer-reviewed</span><span class="tag">Lensless Imaging</span><span class="tag">Privacy</span>
+            </div>
+          </article>
 
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Reconstruction-Free Lensless Image Classification</h3>
-                <span class="status">ICMLA 2025</span>
-              </div>
-              <p><strong>Pramil Paudel</strong>, Fengjun Li</p>
-            </article>
-          </div>
+          <article class="output-card output-peer">
+            <div class="output-top">
+              <h3>Reconstruction-Free Lensless Image Classification</h3>
+              <span class="status">ICMLA 2025</span>
+            </div>
+            <p><strong>Pramil Paudel</strong>, Fengjun Li</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Peer-reviewed</span><span class="tag">Classification</span><span class="tag">Sensor Domain</span>
+            </div>
+          </article>
 
-          <div class="group-label">Preprints / Under Review</div>
-          <div class="output-grid">
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Privacy-Preserving Image-to-Image Steganography</h3>
-                <span class="status">Submitted 2024</span>
-              </div>
-              <p><strong>Pramil Paudel</strong>, Bo Luo, Fengjun Li</p>
-            </article>
+          <article class="output-card output-preprint">
+            <div class="output-top">
+              <h3>Privacy-Preserving Image-to-Image Steganography</h3>
+              <span class="status">Under Review</span>
+            </div>
+            <p><strong>Pramil Paudel</strong>, Bo Luo, Fengjun Li</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Preprint</span><span class="tag">Steganography</span><span class="tag">Privacy</span>
+            </div>
+          </article>
 
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Realtime Anomaly Detection using Event-by-Event SVD</h3>
-                <span class="status">Preprint</span>
-              </div>
-              <p><strong>Pramil Paudel</strong>, Daniel Tapia Takaki</p>
-            </article>
-          </div>
+          <article class="output-card output-preprint">
+            <div class="output-top">
+              <h3>Realtime Anomaly Detection using Event-by-Event SVD</h3>
+              <span class="status">Preprint</span>
+            </div>
+            <p><strong>Pramil Paudel</strong>, Daniel Tapia Takaki</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Preprint</span><span class="tag">HEP</span><span class="tag">Real-time ML</span>
+            </div>
+          </article>
 
-          <div class="group-label">Book</div>
-          <div class="output-grid">
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Basic Electronics Engineering</h3>
-                <span class="status">Book</span>
-              </div>
-              <p>Bikal Adhikari, <strong>Pramil Paudel</strong> · Heritage Publication, Kathmandu</p>
-            </article>
-          </div>
+          <article class="output-card output-book">
+            <div class="output-top">
+              <h3>Basic Electronics Engineering</h3>
+              <span class="status">Book</span>
+            </div>
+            <p>Bikal Adhikari, <strong>Pramil Paudel</strong> · Heritage Publication, Kathmandu</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Book</span><span class="tag">Electronics</span>
+            </div>
+          </article>
 
-          <div class="group-label">Code</div>
-          <div class="output-grid">
-            <article class="output-card">
-              <div class="output-top">
-                <h3>Lensless Imaging and Privacy Evaluation Codebase</h3>
-                <span class="status">Code</span>
-              </div>
-              <p>Code, evaluation scripts, visualizations, and experimental pipelines for lensless imaging, reconstruction, and steganographic analysis.</p>
-              <div class="link-row"><a href="https://github.com/pramil-paudel" target="_blank" rel="noopener">GitHub</a></div>
-            </article>
-          </div>
+          <article class="output-card output-code">
+            <div class="output-top">
+              <h3>Lensless Imaging and Privacy Evaluation Codebase</h3>
+              <span class="status">Code</span>
+            </div>
+            <p>Evaluation pipelines, visualizations, and experimental scripts for lensless imaging and steganographic analysis.</p>
+            <div class="tag-row" style="margin-top:8px">
+              <span class="tag">Code</span><span class="tag">Open Source</span>
+            </div>
+            <div class="link-row"><a href="https://github.com/pramil-paudel" target="_blank" rel="noopener">GitHub →</a></div>
+          </article>
+
         </div>
       </section>
 
@@ -915,66 +296,8 @@
             <h2>Industry engineering plus graduate research.</h2>
           </div>
         </div>
-
         <div class="tl-section">
-          <div class="group-label">Current</div>
-          <div class="experience-list">
-            <article class="experience-item research">
-              <div class="experience-date">May 2021–Present</div>
-              <div>
-                <h3>Graduate Teaching Assistant &amp; PhD Researcher</h3>
-                <div class="experience-org">The University of Kansas</div>
-                <p>Researching privacy-preserving ML for lensless imaging and HEP real-time data processing. TA for Python, OOP, Data Structures, Digital Logic, and capstone Software Engineering courses.</p>
-              </div>
-            </article>
-          </div>
-
-          <div class="group-label">Industry</div>
-          <div class="experience-list">
-            <article class="experience-item industry">
-              <div class="experience-date">Mar 2019–Dec 2019</div>
-              <div>
-                <h3>Solutions Architect</h3>
-                <div class="experience-org">Renegade Insurance, Kathmandu</div>
-                <p>Designed first working architecture for a digital insurance platform connecting U.S. P&amp;C agents with customers. Built real-time B2C and B2B integration layers. Spring Boot, Microservices, Azure, Kubernetes, MongoDB.</p>
-              </div>
-            </article>
-
-            <article class="experience-item industry">
-              <div class="experience-date">Mar 2017–Dec 2018</div>
-              <div>
-                <h3>Engineering Manager</h3>
-                <div class="experience-org">National Incubation &amp; Research Center, Kathmandu</div>
-                <p>Led 20–25 engineers building data analytics and visualization platforms on homegrown Nepali datasets. Designed Groovy on Grails platform, AWS automation pipelines, and CI/CD infrastructure. Java, Hadoop, Spark, Jenkins.</p>
-              </div>
-            </article>
-
-            <article class="experience-item industry">
-              <div class="experience-date">Jan 2016–Dec 2016</div>
-              <div>
-                <h3>Senior Software Engineer</h3>
-                <div class="experience-org">Yotcha Inc., Kathmandu</div>
-                <p>Founding team member. Designed and launched the flagship real-estate web application. Defined CI/CD workflows and mentored junior developers. Groovy on Grails, Hadoop, JavaScript, AWS.</p>
-              </div>
-            </article>
-
-            <article class="experience-item industry">
-              <div class="experience-date">Dec 2014–May 2017</div>
-              <div>
-                <h3>Software Engineer Team Lead</h3>
-                <div class="experience-org">Deerwalk Inc. (now Deerwalk Services), Kathmandu</div>
-                <p>Designed Scala/Spark frameworks for large-scale U.S. healthcare data analytics. Led data scrubbing and transformation pipelines using Cascading. Integrated AWS cloud storage and runtime pipelines for on-demand processing.</p>
-              </div>
-            </article>
-
-            <article class="experience-item industry">
-              <div class="experience-date">Jan 2011–Sept 2014</div>
-              <div>
-                <h3>Core Member</h3>
-                <div class="experience-org">Robotics Club, IOE-WRC, Pokhara</div>
-                <p>Participated in robot design projects. Contributed to embedded systems development (Bluetooth, Wireless 802.11, RF). Built image-processing projects for surveillance and security monitoring.</p>
-              </div>
-            </article>
+          <div class="experience-list" id="industry-experience-mount">
           </div>
         </div>
       </section>
@@ -987,7 +310,6 @@
             <h2>Technical stack.</h2>
           </div>
         </div>
-
         <div class="skill-grid">
           <article class="skill-card">
             <h3>Computer Science / ML</h3>
@@ -996,7 +318,6 @@
               <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">CNNs / GANs</span><span class="chip">Transformers</span><span class="chip">Lensless Imaging</span><span class="chip">Adversarial Robustness</span>
             </div>
           </article>
-
           <article class="skill-card">
             <h3>Software Engineering</h3>
             <p>Backend development, Java frameworks, cloud computing, experiment automation, and scalable code organization.</p>
@@ -1004,7 +325,6 @@
               <span class="chip">Java</span><span class="chip">Python</span><span class="chip">Scala</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span><span class="chip">Docker</span><span class="chip">DevOps / CI-CD</span><span class="chip">Git</span><span class="chip">Agile</span>
             </div>
           </article>
-
           <article class="skill-card">
             <h3>Data Systems</h3>
             <p>Large-scale data processing, search, and analytics infrastructure.</p>
@@ -1012,7 +332,6 @@
               <span class="chip">Hadoop</span><span class="chip">Spark</span><span class="chip">Elasticsearch</span><span class="chip">MySQL</span><span class="chip">ETL</span><span class="chip">Data Pipelines</span><span class="chip">Big Data Analytics</span>
             </div>
           </article>
-
           <article class="skill-card">
             <h3>Hardware / Embedded</h3>
             <p>Electronics background with hands-on experience in microcontrollers, digital logic, and circuit design.</p>
@@ -1032,7 +351,6 @@
               <h2>Academic background.</h2>
             </div>
           </div>
-
           <div class="timeline-list">
             <article class="timeline-item">
               <div class="timeline-top">
@@ -1058,7 +376,6 @@
               <h2>Courses &amp; workshops.</h2>
             </div>
           </div>
-
           <div class="group-label">Courses</div>
           <div class="talk-list">
             <article class="talk-item">
@@ -1070,7 +387,6 @@
               <p>Software Engineering I · Software Engineering II</p>
             </article>
           </div>
-
           <div class="group-label">Workshops &amp; Training</div>
           <div class="talk-list">
             <article class="talk-item">
@@ -1089,7 +405,6 @@
             <h2>Community, culture, and service.</h2>
           </div>
         </div>
-
         <div class="two-col">
           <article class="award-item">
             <h3>Leadership &amp; Outreach</h3>
@@ -1114,7 +429,6 @@
             <h2>Recent updates.</h2>
           </div>
         </div>
-
         <div class="news-list">
           <div class="news-item">
             <div class="news-date">2025</div>
@@ -1140,5 +454,29 @@
       </footer>
     </div>
   </main>
+
+  <script>
+    function alignDots() {
+      document.querySelectorAll('.tl-section .experience-item').forEach(item => {
+        const h3 = item.querySelector('h3');
+        if (!h3) return;
+        const itemRect = item.getBoundingClientRect();
+        const h3Rect = h3.getBoundingClientRect();
+        const offset = (h3Rect.top - itemRect.top) + (h3Rect.height / 2) - 5.5;
+        item.style.setProperty('--dot-top', offset + 'px');
+      });
+    }
+
+    fetch('industry_experience.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('industry-experience-mount').insertAdjacentHTML('beforeend', html);
+        requestAnimationFrame(() => requestAnimationFrame(alignDots));
+      });
+
+    window.addEventListener('resize', alignDots);
+    window.addEventListener('load', alignDots);
+  </script>
+
 </body>
 </html>
